@@ -30,18 +30,7 @@
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
-                            </button>          
-                            <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
-                            <div class="mx-auto"></div>
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#home">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#contactus">Contact Us</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            </button>
                         </nav>
                     </div>
                 </div>
@@ -49,24 +38,50 @@
         </div>
         <header class="gradient-bg" id="home">
             <div class="container mt-5">
-                <div>
-                    <div class="content">
-                        <h1 style="color: #02005C;">PT. KETWOOO</h1>
-                        <p>Sistem Informasi Penggajian Karyawan (SIPK) 
-                            <br>di PT. KELOMPOK 2 memudahkan karyawan
-                            <br>dan perusahaan dalam mengatur penggajian 
-                            <br>para karyawan.</p>
-                        <a class="btn btn-warning" href="signin.html" role="button">Sign In</a>
-                        <a class="btn btn-dark" href="signup.html" role="button">Sign Up</a>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                <div class="form-control">
+                    <h1 class="text-center mt-3">Sign In</h1>
+                    <div class="bs-example">
+                        <form action="/examples/actions/confirmation.php" method="post">
+                            <div class="form-group mt-3">
+                                <div class="row">
+                                    <div class="text-center col-md-3 mt-3">
+                                        <label for="inputNama">Nama:</label>
+                                    </div>
+                                    <div class="col-md-5 mt-3">
+                                        <input type="nama" class="form-control" id="inputNama" 
+                                        placeholder="Masukkan Nama Anda" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="text-center col-md-3 mt-3">
+                                        <label for="inputEmail">Email:</label>
+                                    </div>
+                                    <div class="col-md-5 mt-3">
+                                        <input type="email" class="form-control" id="inputEmail" 
+                                        placeholder="Masukkan Email Anda" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="text-center col-md-3 mt-3">
+                                    </div>
+                                    <div class="col-md-9 mt-3">
+                                        <a class="btn btn-primary" href="#" role="button">Sign In</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </form>
                     </div>
                 </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
             </div>
         </header>
         <div class="section footer-bg" id="contactus">
