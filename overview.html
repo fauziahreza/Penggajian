@@ -514,46 +514,34 @@
             <div class="col-4">
               <i class="fa fa-user fa-8x"></i>
             </div>
-            <div class="col-7">
+            <div class="col-8">
               <form>
                 <div class="row my-2">
-                  <label id="labelProfileName">Fauziah reza</label>
-                  <input type="text" id="inputProfileName" style="display: none;">
+                  <label id="labelProfileName" class="mr-auto">Fauziah reza</label>
+                  <input type="text" id="inputProfileName" style="display: none;" class="mr-auto">
+                  <button onclick="showInputForm('inputProfileName', 'labelProfileName', this); return false;" class="editprofile fa fa-edit"></button>
                 </div>
                 <div class="row my-2">
-                  <label id="labelProfileAddress">Telang 123</label>
-                  <input type="text" id="inputProfileAddress" style="display: none;">
+                  <label id="labelProfileAddress" class="mr-auto">Telang 123</label>
+                  <input type="text" id="inputProfileAddress" style="display: none;" class="mr-auto">
+                  <button onclick="showInputForm('inputProfileAddress', 'labelProfileAddress', this); return false;" class="editprofile fa fa-edit"></button>
                 </div>
                 <div class="row my-2">
-                  <label id="labelProfileEmail">email@gmail.com</label>
-                  <input type="text" id="inputProfileEmail" style="display: none;">
+                  <label id="labelProfileEmail" class="mr-auto">email@gmail.com</label>
+                  <input type="text" id="inputProfileEmail" style="display: none;" class="mr-auto">
+                  <button onclick="showInputForm('inputProfileEmail', 'labelProfileEmail', this); return false;" class="editprofile fa fa-edit"></button>
                 </div>
                 <div class="row my-2">
-                  <label id="labelProfilePhone">0812345678</label>
-                  <input type="text" id="inputProfilePhone" style="display: none;">
+                  <label id="labelProfilePhone" class="mr-auto">0812345678</label>
+                  <input type="text" id="inputProfilePhone" style="display: none;" class="mr-auto">
+                  <button onclick="showInputForm('inputProfilePhone', 'labelProfilePhone', this); return false;" class="editprofile fa fa-edit"></button>
                 </div>
                 <div class="row my-2">
-                  <label id="labelProfilePassword">Password</label>
-                  <input type="password" id="inputProfilePassword" style="display: none;">
+                  <label id="labelProfilePassword" class="mr-auto">Password</label>
+                  <input type="password" id="inputProfilePassword" style="display: none;" class="mr-auto">
+                  <button onclick="showInputForm('inputProfilePassword', 'labelProfilePassword', this); return false;" class="editprofile fa fa-edit"></button>
                 </div>
               </form>
-            </div>
-            <div class="col">
-              <div class="row my-2">
-                <button onclick="showInputForm('inputProfileName', 'labelProfileName', this); return false;"><i class="fa fa-edit"></i></button>
-              </div>
-              <div class="row my-2">
-                <button onclick="showInputForm('inputProfileAddress', 'labelProfileAddress', this); return false;"><i class="fa fa-edit"></i></button>
-              </div>
-              <div class="row my-2">
-                <button onclick="showInputForm('inputProfileEmail', 'labelProfileEmail', this); return false;"><i class="fa fa-edit"></i></button>
-              </div>
-              <div class="row my-2">
-                <button onclick="showInputForm('inputProfilePhone', 'labelProfilePhone', this); return false;"><i class="fa fa-edit"></i></button>
-              </div>
-              <div class="row my-2">
-                <button onclick="showInputForm('inputProfilePassword', 'labelProfilePassword', this); return false;"><i class="fa fa-edit"></i></button>
-              </div>
             </div>
           </div>
         </div>
