@@ -93,7 +93,7 @@
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Welcome!</h6>
                 </div>
-                <a href="#!" class="dropdown-item">
+                <a href="#!" class="dropdown-item" data-toggle="modal" data-target="#popupProfile">
                   <i class="ni ni-single-02"></i>
                   <span>My profile</span>
                 </a>
@@ -495,6 +495,71 @@
               </table>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Pop up profile -->
+  <div class="modal fade" id="popupProfile" tabindex="-1" role="dialog" aria-labelledby="popupProfile" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Profile</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-4">
+              <i class="fa fa-user fa-8x"></i>
+            </div>
+            <div class="col-7">
+              <form>
+                <div class="row my-2">
+                  <label id="labelProfileName">Fauziah reza</label>
+                  <input type="text" id="inputProfileName" style="display: none;">
+                </div>
+                <div class="row my-2">
+                  <label id="labelProfileAddress">Telang 123</label>
+                  <input type="text" id="inputProfileAddress" style="display: none;">
+                </div>
+                <div class="row my-2">
+                  <label id="labelProfileEmail">email@gmail.com</label>
+                  <input type="text" id="inputProfileEmail" style="display: none;">
+                </div>
+                <div class="row my-2">
+                  <label id="labelProfilePhone">0812345678</label>
+                  <input type="text" id="inputProfilePhone" style="display: none;">
+                </div>
+                <div class="row my-2">
+                  <label id="labelProfilePassword">Password</label>
+                  <input type="password" id="inputProfilePassword" style="display: none;">
+                </div>
+              </form>
+            </div>
+            <div class="col">
+              <div class="row my-2">
+                <button onclick="showInputForm('inputProfileName', 'labelProfileName', this); return false;"><i class="fa fa-edit"></i></button>
+              </div>
+              <div class="row my-2">
+                <button onclick="showInputForm('inputProfileAddress', 'labelProfileAddress', this); return false;"><i class="fa fa-edit"></i></button>
+              </div>
+              <div class="row my-2">
+                <button onclick="showInputForm('inputProfileEmail', 'labelProfileEmail', this); return false;"><i class="fa fa-edit"></i></button>
+              </div>
+              <div class="row my-2">
+                <button onclick="showInputForm('inputProfilePhone', 'labelProfilePhone', this); return false;"><i class="fa fa-edit"></i></button>
+              </div>
+              <div class="row my-2">
+                <button onclick="showInputForm('inputProfilePassword', 'labelProfilePassword', this); return false;"><i class="fa fa-edit"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
