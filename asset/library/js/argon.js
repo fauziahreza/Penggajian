@@ -1,3 +1,17 @@
+function showInputForm(id, text) {
+	x = document.getElementById(id).style.display;
+	y = document.getElementById(text).innerHTML;
+	z = document.getElementById(id).value;
+	if (x == 'none'){
+		document.getElementById(id).value = y;
+    	document.getElementById(id).style.display = 'block';
+    	document.getElementById(text).style.display = 'none';
+	}else{
+		document.getElementById(id).style.display = 'none';
+		document.getElementById(text).style.display = 'block';
+		document.getElementById(text).innerHTML = z;
+	}
+}
 
 /*!
 

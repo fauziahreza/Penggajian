@@ -27,3 +27,8 @@ header {
     margin-left: 50px;
     color: white;
 }
+
+button.editprofile{
+    background-color: transparent;
+    border: none;
+}
