@@ -139,7 +139,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-0">Period : 01/01/2021 - 31/01/2021</h5>
-                                            <span class="h2 font-weight-bold mb-0">Rp 200.000.000</span>
+                                            <span class="h2 font-weight-bold mb-0"><label id="periodBalance">Rp 200.000.000</label></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -157,7 +157,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-0">Balance</h5>
-                                            <span class="h2 font-weight-bold mb-0">Rp 500.000.000</span>
+                                            <span class="h2 font-weight-bold mb-0"><label id="balance">Rp 500.000.000</label></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -228,7 +228,7 @@
                                             Paid
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-success btn-sm">Edit</button>
+                                            <button type="button" class="editprofile fa fa-edit"></button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -248,7 +248,7 @@
                                             Paid
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-success btn-sm">Edit</button>
+                                            <button type="button" class="editprofile fa fa-edit"></button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -268,7 +268,7 @@
                                             Paid
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-success btn-sm">Edit</button>
+                                            <button type="button" class="editprofile fa fa-edit"></button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -285,10 +285,11 @@
                                             Bank Transfer
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-success btn-sm">Paid Now</button>
+                                            <label id="notpaidyet">Not paid yet</label> 
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-success btn-sm">Edit</button>
+                                            <button type="button" onclick="payNow('paynow','notpaidyet','balance','periodBalance')" id="paynow" class="btn btn-success btn-sm">Pay now</button>
+                                            <button type="button" class="editprofile fa fa-edit"></button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -308,7 +309,7 @@
                                             Paid
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-success btn-sm">Edit</button>
+                                            <button type="button" class="editprofile fa fa-edit"></button>
                                         </td>
                                     </tr>
                                 </tbody>

@@ -1,3 +1,4 @@
+// function popup profile
 function showInputForm(id, text) {
 	x = document.getElementById(id).style.display;
 	y = document.getElementById(text).innerHTML;
@@ -11,6 +12,14 @@ function showInputForm(id, text) {
 		document.getElementById(text).style.display = 'block';
 		document.getElementById(text).innerHTML = z;
 	}
+}
+
+//function payroll - pay now
+function payNow(id, text, balance, period){
+	document.getElementById(period).innerHTML = 'Rp 195.000.000'
+	document.getElementById(balance).innerHTML = 'Rp 495.000.000';
+	document.getElementById(id).style.display = 'none';
+	document.getElementById(text).innerHTML = 'paid';
 }
 
 /*!
