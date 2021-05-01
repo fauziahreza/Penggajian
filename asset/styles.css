@@ -32,3 +32,8 @@ button.editprofile{
     background-color: transparent;
     border: none;
 }
+
+.navbar-inner .fixed-bottom {
+    bottom: 30px;
+    left: 50px;
+}
