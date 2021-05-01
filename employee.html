@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>penggajian</title>
+    <title>Employee</title>
     <!-- Favicon -->
     <link rel="icon" href="asset/images/logo.png" type="image/png">
     <!-- Fonts -->
@@ -61,7 +61,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Scheduler.html">
+                            <a class="nav-link" href="JamKerja.html">
                                 <i class="ni ni-bullet-list-67 text-default"></i>
                                 <span class="nav-link-text">Scheduler</span>
                             </a>
@@ -82,8 +82,8 @@
                             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="media align-items-center">
                                     <span class="avatar avatar-sm rounded-circle">
-                                        <img alt="Image placeholder" src="asset/images/profil.jpg">
-                                    </span>
+                    <img alt="Image placeholder" src="asset/images/logo.png">
+                  </span>
                                     <div class="media-body  ml-2  d-none d-lg-block">
                                         <span class="mb-0 text-sm  font-weight-bold">Fauziah Reza Oktaviyani</span>
                                     </div>
@@ -93,7 +93,7 @@
                                 <div class="dropdown-header noti-title">
                                     <h6 class="text-overflow m-0">Welcome!</h6>
                                 </div>
-                                <a href="#!" class="dropdown-item" data-toggle="modal" data-target="#popupProfile">
+                                <a href="#!" class="dropdown-item">
                                     <i class="ni ni-single-02"></i>
                                     <span>My profile</span>
                                 </a>
@@ -127,71 +127,29 @@
                 <div class="header-body">
                     <div class="row align-items-center py-4">
                         <div class="col-lg-6 col-7">
-                            <h6 class="h2 text-white d-inline-block mb-0">Overview</h6>
+                            <h6 class="h2 text-white d-inline-block mb-0">Employee</h6>
                         </div>
                     </div>
                     <!-- Card stats -->
-                    <div class="row">
-                        <div class="col-xl-8 col-md-6">
-                            <div class="card card-stats">
-                                <!-- Card body -->
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Calendar</h5>
-                                            <span class="h2 font-weight-bold mb-0">350,897</span>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                                                <i class="ni ni-active-40"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="mt-3 mb-0 text-sm">
-                                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                                        <span class="text-nowrap">Since last month</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="card card-stats">
-                                <!-- Card body -->
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Number Of Employee</h5>
-                                        </div>
-                                        <span class="h2 font-weight-bold mb-0">40</span>
-                                        <div class="col-auto">
-                                            <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
-                                                <i class="ni ni-chart-pie-35"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="mt-3 mb-0 text-sm">
-                                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                                        <span class="text-nowrap">Since last month</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
         <!-- Page content -->
         <div class="container-fluid mt--6">
             <div class="row">
-                <div class="col-xl-8">
+                <div class="col">
                     <div class="card">
                         <div class="card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h3 class="mb-0">Timesheet</h3>
                                 </div>
-                                <div class="col text-right">
-                                    <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                                <div class="col-xl-3 text-right">
+                                    <div class="input-group rounded">
+                                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                                        <button class="btn btn-dark" id="search-addon">
+                          <i class="fas fa-search"></i>
+                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -200,375 +158,216 @@
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">
                                     <tr>
+                                        <th scope="col">ID</th>
                                         <th scope="col">Staff Name</th>
-                                        <th scope="col">Mon</th>
-                                        <th scope="col">Tue</th>
-                                        <th scope="col">Wed</th>
-                                        <th scope="col">Thu</th>
-                                        <th scope="col">Fri</th>
-                                        <th scope="col">Sat</th>
-                                        <th scope="col">Sun</th>
-                                        <th scope="col">Overtime Hours</th>
-                                        <th scope="col">Weekly Hours</th>
+                                        <th scope="col">Position</th>
+                                        <th scope="col">join data</th>
+                                        <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <th scope="row">
+                                            101
+                                        </th>
+                                        <td>
                                             Fauziah Reza
-                                        </th>
-                                        <td>
-                                            8
                                         </td>
                                         <td>
-                                            8
+                                            Mobile Developer
                                         </td>
                                         <td>
-                                            8
+                                            2021-01-01
                                         </td>
                                         <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            0
-                                        </td>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            48
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            Fauziah Reza
-                                        </th>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            0
-                                        </td>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            48
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            Fauziah Reza
-                                        </th>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            0
-                                        </td>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            48
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            Fauziah Reza
-                                        </th>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            0
-                                        </td>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            48
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            Fauziah Reza
-                                        </th>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            0
-                                        </td>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            48
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="card">
-                        <div class="card-header border-0">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <h3 class="mb-0">Activity</h3>
-                                </div>
-                                <div class="col text-right">
-                                    <a href="#!" class="btn btn-sm btn-primary">See all</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <!-- Projects table -->
-                            <table class="table align-items-center table-flush">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th scope="col">Referral</th>
-                                        <th scope="col">Visitors</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            Facebook
-                                        </th>
-                                        <td>
-                                            1,480
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <span class="mr-2">60%</span>
-                                                <div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            Facebook
-                                        </th>
-                                        <td>
-                                            5,480
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <span class="mr-2">70%</span>
-                                                <div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            Google
-                                        </th>
-                                        <td>
-                                            4,807
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <span class="mr-2">80%</span>
-                                                <div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            Instagram
-                                        </th>
-                                        <td>
-                                            3,678
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <span class="mr-2">75%</span>
-                                                <div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            twitter
-                                        </th>
-                                        <td>
-                                            2,645
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <span class="mr-2">30%</span>
-                                                <div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  edit
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">edit employee</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
-    <!-- Pop up profile -->
-    <div class="modal fade" id="popupProfile" tabindex="-1" role="dialog" aria-labelledby="popupProfile" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Profile</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-4">
-                            <!-- Profile picture -->
-                            <i class="fa fa-user fa-10x"></i>
-                        </div>
-                        <div class="col-8">
-                            <form>
-                                <div class="row my-2">
-                                    <div class="col mr-auto">
-                                        <label id="labelProfileName">Fauziah reza</label>
-                                        <input type="text" id="inputProfileName" style="display: none;" size="50">
-                                    </div>
-                                    <div class="col-2">
-                                        <button onclick="showInputForm('inputProfileName', 'labelProfileName', this); return false;" class="editprofile fa fa-edit"></button>
-                                    </div>
-                                </div>
-                                <div class="row my-2">
-                                    <div class="col mr-auto">
-                                        <label id="labelProfileAddress">Telang 123, Bangkalan, Indonesia 61971</label>
-                                        <input type="text" id="inputProfileAddress" style="display: none;" size="50">
-                                    </div>
-                                    <div class="col-2">
-                                        <button onclick="showInputForm('inputProfileAddress', 'labelProfileAddress', this); return false;" class="editprofile fa fa-edit"></button>
-                                    </div>
-                                </div>
-                                <div class="row my-2">
-                                    <div class="col mr-auto">
-                                        <label id="labelProfileEmail">email@gmail.com</label>
-                                        <input type="text" id="inputProfileEmail" style="display: none;" size="50">
-                                    </div>
-                                    <div class="col-2">
-                                        <button onclick="showInputForm('inputProfileEmail', 'labelProfileEmail', this); return false;" class="editprofile fa fa-edit"></button>
-                                    </div>
-                                </div>
-                                <div class="row my-2">
-                                    <div class="col mr-auto">
-                                        <label id="labelProfilePhone">0812345678</label>
-                                        <input type="text" id="inputProfilePhone" style="display: none;" size="50">
-                                    </div>
-                                    <div class="col-2">
-                                        <button onclick="showInputForm('inputProfilePhone', 'labelProfilePhone', this); return false;" class="editprofile fa fa-edit"></button>
-                                    </div>
-                                </div>
-                                <div class="row my-2">
-                                    <div class="col mr-auto">
-                                        <label id="labelProfilePassword">Password</label>
-                                        <input type="password" id="inputProfilePassword" style="display: none;" size="50">
-                                    </div>
-                                    <div class="col-2">
-                                        <button onclick="showInputForm('inputProfilePassword', 'labelProfilePassword', this); return false;" class="editprofile fa fa-edit"></button>
-                                    </div>
-                                </div>
-                            </form>
+  </div>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  create
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">create employee</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            101
+                                        </th>
+                                        <td>
+                                            Fauziah Reza
+                                        </td>
+                                        <td>
+                                            Mobile Developer
+                                        </td>
+                                        <td>
+                                            2021-01-01
+                                        </td>
+                                        <td>
+                                           <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  edit
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">edit employee</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  create
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">create employee</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            101
+                                        </th>
+                                        <td>
+                                            Fauziah Reza
+                                        </td>
+                                        <td>
+                                            Mobile Developer
+                                        </td>
+                                        <td>
+                                            2021-01-01
+                                        </td>
+                                        <td>
+                                            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  edit
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">edit employee</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  create
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">create employee</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
