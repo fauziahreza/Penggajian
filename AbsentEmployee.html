@@ -141,6 +141,12 @@
                     <div class="card">
                         <div class="card-header border-0">
                             <div class="row align-items-center">
+                                <div>
+                                    <form action="#">
+                                        Date :
+                                        <input type="date" name="datepicker">
+                                    </form>
+                                </div>
                                 <div class="col">
                                 </div>
                                 <div class="col-xl-3 text-right">
@@ -162,7 +168,7 @@
                                         <th scope="col">Staff Name</th>
                                         <th scope="col">Position</th>
                                         <th scope="col">Status</th>
-                                        <th scope="col">Absent day</th>
+                                        <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -184,11 +190,13 @@
 
                                         </td>
                                         <td>
-                                            2
+                                            <div class="col-2">
+                                                <button type="button" class="editprofile fa fa-edit" data-toggle="modal" data-target="#mymodal"></button>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">
+                                        <th scope="row ">
                                             101
                                         </th>
                                         <td>
@@ -198,17 +206,19 @@
                                             Mobile Developer
                                         </td>
                                         <td>
-                                            <span class="badge badge-dot mr--4">
-                                                <i class="bg-success"></i>
-                                                <span class="status">Attend</span>
+                                            <span class="badge badge-dot mr--4 ">
+                                                <i class="bg-success "></i>
+                                                <span class="status ">Attend</span>
                                             </span>
                                         </td>
                                         <td>
-                                            2
+                                            <div class="col-2">
+                                                <button type="button" class="editprofile fa fa-edit" data-toggle="modal" data-target="#mymodal"></button>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">
+                                        <th scope="row ">
                                             101
                                         </th>
                                         <td>
@@ -218,17 +228,19 @@
                                             Mobile Developer
                                         </td>
                                         <td>
-                                            <span class="badge badge-dot mr--4">
-                                                <i class="bg-success"></i>
-                                                <span class="status">Attend</span>
+                                            <span class="badge badge-dot mr--4 ">
+                                                <i class="bg-success "></i>
+                                                <span class="status ">Attend</span>
                                             </span>
                                         </td>
                                         <td>
-                                            2
+                                            <div class="col-2">
+                                                <button type="button" class="editprofile fa fa-edit" data-toggle="modal" data-target="#mymodal"></button>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">
+                                        <th scope="row ">
                                             101
                                         </th>
                                         <td>
@@ -238,17 +250,19 @@
                                             Mobile Developer
                                         </td>
                                         <td>
-                                            <span class="badge badge-dot mr--4">
-                                                <i class="bg-success"></i>
-                                                <span class="status">Attend</span>
+                                            <span class="badge badge-dot mr--4 ">
+                                                <i class="bg-success "></i>
+                                                <span class="status ">Attend</span>
                                             </span>
                                         </td>
                                         <td>
-                                            2
+                                            <div class="col-2">
+                                                <button type="button" class="editprofile fa fa-edit" data-toggle="modal" data-target="#mymodal"></button>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">
+                                        <th scope="row ">
                                             101
                                         </th>
                                         <td>
@@ -258,13 +272,15 @@
                                             Mobile Developer
                                         </td>
                                         <td>
-                                            <span class="badge badge-dot mr--4">
-                                                <i class="bg-success"></i>
-                                                <span class="status">Attend</span>
+                                            <span class="badge badge-dot mr--4 ">
+                                                <i class="bg-success "></i>
+                                                <span class="status ">Attend</span>
                                             </span>
                                         </td>
                                         <td>
-                                            2
+                                            <div class="col-2">
+                                                <button type="button" class="editprofile fa fa-edit" data-toggle="modal" data-target="#mymodal"></button>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -275,18 +291,41 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div id="mymodal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- konten modal-->
+            <div class="modal-content">
+                <!-- heading modal -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Bagian heading modal</h4>
+                </div>
+                <!-- body modal -->
+                <div class="modal-body">
+                    <p>bagian body modal.</p>
+                </div>
+                <!-- footer modal -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- Argon Scripts -->
     <!-- Core -->
-    <script src="asset/library/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="asset/library/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="asset/library/vendor/js-cookie/js.cookie.js"></script>
-    <script src="asset/library/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-    <script src="asset/library/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+    <script src="asset/library/vendor/jquery/dist/jquery.min.js "></script>
+    <script src="asset/library/vendor/bootstrap/dist/js/bootstrap.bundle.min.js "></script>
+    <script src="asset/library/vendor/js-cookie/js.cookie.js "></script>
+    <script src="asset/library/vendor/jquery.scrollbar/jquery.scrollbar.min.js "></script>
+    <script src="asset/library/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js "></script>
     <!-- Optional JS -->
-    <script src="asset/library/vendor/chart.js/dist/Chart.min.js"></script>
-    <script src="asset/library/vendor/chart.js/dist/Chart.extension.js"></script>
+    <script src="asset/library/vendor/chart.js/dist/Chart.min.js "></script>
+    <script src="asset/library/vendor/chart.js/dist/Chart.extension.js "></script>
     <!-- Argon JS -->
-    <script src="asset/library/js/argon.js?v=1.2.0"></script>
+    <script src="asset/library/js/argon.js?v=1.2.0 "></script>
 </body>
 
 </html>
