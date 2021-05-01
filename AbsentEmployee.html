@@ -299,31 +299,27 @@
             <div class="modal-content">
                 <!-- heading modal -->
                 <div class="modal-header">
+                    <h4 class="modal-title">Verification of employee attendance</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"></h4>
                 </div>
                 <!-- body modal -->
                 <div class="modal-body">
-                    <p>Pilih Daftar Kehadiran</p>
-                    <div>
-                        <span class="badge badge-dot mr--4 ">
-                        <i class="bg-success "></i>
-                        <span class="status ">Attend</span>
-                        </span>
-                    </div>
-                    <div>
-                        <span class="badge badge-dot mr--4 ">
-                    <i class="bg-warning"></i>
-                    <span class="status">Not present</span>
-                        </span>
+                    <p>Select Conditions</p>
+                    <div class="btn-group-vertical">
+                        <button type="button" class="btn btn-outline-success" data-bs-toggle="button" autocomplete="off">Attend</button>
+                        <br>
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="button" autocomplete="off" aria-pressed="true">Absent</i></button>
+                        <input type="text" class="form-control fa-text-width" placeholder="Keterangan" aria-label="Keterangan">
                     </div>
                 </div>
-                <!-- footer modal -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
-                </div>
+                <button type="submit" class="btn bg-gradient-success">Verified</button>
+            </div>
+            <!-- footer modal -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup Modal</button>
             </div>
         </div>
+    </div>
     </div>
     </div>
     <!-- Argon Scripts -->
