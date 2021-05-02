@@ -22,6 +22,10 @@ function payNow(id, text, balance, period){
 	document.getElementById(text).innerHTML = 'paid';
 }
 
+function previousPage(){
+	window.history.back();
+}
+
 /*!
 
 =========================================================
