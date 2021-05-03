@@ -294,10 +294,14 @@
                 <!-- body modal -->
                 <div class="modal-body">
                     <p>Select Conditions :</p>
-                    <div class="btn-group-vertical">
-                        <button type="button" class="btn btn-outline-success" data-bs-toggle="button" autocomplete="off">Attend</button>
+                    <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-outline-success">
+                            <input type="radio" name="attendance" id="attendance-yes" autocomplete="off">Attend
+                        </label>
                         <br>
-                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="button" autocomplete="off" aria-pressed="true">Absent</button>
+                        <label class="btn btn-outline-danger">
+                            <input type="radio" name="attendance" id="attendance-no" autocomplete="off">Absent
+                        </label>
                         <br>
                         <input type="text" class="form-control fa-text-width" placeholder="Keterangan" aria-label="Keterangan">
                     </div>
