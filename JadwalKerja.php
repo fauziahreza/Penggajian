@@ -63,66 +63,7 @@
                         8 AM - 16 PM
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">
-                        2
-                    </th>
-                    <td>
-                        8 AM - 16 PM
-                    </td>
-                    <td>
-                        8 AM - 16 PM
-                    </td>
-                    <td>
-                        8 AM - 16 PM
-                    </td>
-                    <td>
-                        8 AM - 16 PM
-                    </td>
-        <td>
-                        8 AM - 16 PM
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        3
-                    </th>
-                    <td>
-                        8 AM - 16 PM
-                    </td>
-                    <td>
-                        8 AM - 16 PM
-                    </td>
-                    <td>
-                        8 AM - 16 PM
-                    </td>
-                    <td>
-                        8 AM - 16 PM
-                    </td>
-        <td>
-                        8 AM - 16 PM
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        4
-                    </th>
-                    <td>
-                        8 AM - 16 PM
-                    </td>
-                    <td>
-                        8 AM - 16 PM
-                    </td>
-                    <td>
-                        8 AM - 16 PM
-                    </td>
-                    <td>
-                        8 AM - 16 PM
-                    </td>
-        <td>
-                        8 AM - 16 PM
-                    </td>
-                </tr>
+                
             </tbody>
           </table>
     <br><br>
