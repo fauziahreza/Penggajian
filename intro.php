@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="index.php">
                                 <img height="50" width="50" src="asset/images/logo.png" class="img-fluid" alt="logo">
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,8 +56,8 @@
                             <br>di PT. KELOMPOK 2 memudahkan karyawan
                             <br>dan perusahaan dalam mengatur penggajian 
                             <br>para karyawan.</p>
-                        <a class="btn btn-warning" href="signin.html" role="button">Sign In</a>
-                        <a class="btn btn-dark" href="signup.html" role="button">Sign Up</a>
+                        <a class="btn btn-warning" href="signin.php" role="button">Sign In</a>
+                        <a class="btn btn-dark" href="signup.php" role="button">Sign Up</a>
                         <br>
                         <br>
                         <br>

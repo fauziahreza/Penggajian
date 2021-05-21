@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="intro.php">
                                 <img height="50" width="50" src="asset/images/logo.png" class="img-fluid" alt="logo">
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,7 @@
                             <div class="mx-auto"></div>
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index.html">Home</a>
+                                        <a class="nav-link" href="intro.php">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#contactus">Contact Us</a>
@@ -92,7 +92,7 @@
                             <button type="button" class="btn btn-primary my-4">Sign Up</button>
                         </div>
                         <div class="ml-9 col-9">
-                            <a href="signin.html" class="text-light"><small>Already have an account</small></a>
+                            <a href="signin.php" class="text-light"><small>Already have an account</small></a>
                         </div>
                         </form>
                     </div>

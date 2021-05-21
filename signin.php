@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="intro.php">
                                 <img height="50" width="50" src="asset/images/logo.png" class="img-fluid" alt="logo">
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,7 @@
                             <div class="mx-auto"></div>
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index.html">Home</a>
+                                        <a class="nav-link" href="intro.php">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#contactus">Contact Us</a>
@@ -63,26 +63,26 @@
                         <div class="text-center text-muted mb-4">
                         <small>Sign In</small>
                         </div>
-                        <form role="form">
-                        <div class="form-group mb-3">
-                            <div class="input-group input-group-merge input-group-alternative">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                        <form role="form" action="system/login-system.php" method="post">
+                            <div class="form-group mb-3">
+                                <div class="input-group input-group-merge input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                </div>
+                                    <input class="form-control" placeholder="Email" type="email" name="email_user">
+                                </div>
                             </div>
-                            <input class="form-control" placeholder="Email" type="email">
+                            <div class="form-group">
+                                <div class="input-group input-group-merge input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                </div>
+                                    <input class="form-control" placeholder="Password" type="password" name="password_user">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group input-group-merge input-group-alternative">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary my-4" role="button">Sign In</button>
                             </div>
-                            <input class="form-control" placeholder="Password" type="password">
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <a class="btn btn-primary my-4" href="overview.html" role="button">Sign In</a>
-                        </div>
                         </form>
                     </div>
                     </div>
@@ -91,7 +91,7 @@
                         <a href="#" class="text-light"><small>Forgot password?</small></a>
                     </div>
                     <div class="col-6 text-right">
-                        <a href="signup.html" class="text-light"><small>Create new account</small></a>
+                        <a href="signup.php" class="text-light"><small>Create new account</small></a>
                     </div>
                     </div>
                 </div>
