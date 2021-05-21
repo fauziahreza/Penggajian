@@ -40,62 +40,6 @@
             <tbody>
                 <tr>
                     <td>
-                        January
-                    </td>
-                    <td>
-                        Mobile Developer
-                    </td>
-                    <td>
-                        Rp 5.000.000
-                    </td>
-                    <td>
-                        <a href="index.php?page=DetailRincianGaji" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Detail</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        February
-                    </td>
-                    <td>
-                        Mobile Developer
-                    </td>
-                    <td>
-                        Rp 5.000.000
-                    </td>
-                    <td>
-                        <a href="DetailRincianGaji.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Detail</a>
-                    </td>
-                </tr>
-      <tr>
-                    <td>
-                        March
-                    </td>
-                    <td>
-                        Mobile Developer
-                    </td>
-                    <td>
-                        Rp 5.000.000
-                    </td>
-                    <td>
-                        <a href="DetailRincianGaji.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Detail</a>
-                    </td>
-                </tr>
-      <tr>
-                    <td>
-                        April
-                    </td>
-                    <td>
-                        Mobile Developer
-                    </td>
-                    <td>
-                        Rp 5.000.000
-                    </td>
-                    <td>
-                        <a href="DetailRincianGaji.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Detail</a>
-                    </td>
-                </tr>
-      <tr>
-                    <td>
                         May
                     </td>
                     <td>
