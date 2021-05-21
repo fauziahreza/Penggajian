@@ -61,39 +61,39 @@
                     <div class="card bg-secondary border-0 mb-0">
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">
-                        <small>Sign Up</small>
+                            <small>Sign Up</small>
                         </div>
-                        <form role="form">
-                        <div class="form-group mb-3">
-                            <div class="input-group input-group-merge input-group-alternative mb-3">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                              </div>
-                              <input class="form-control" placeholder="Name" type="text">
+                        <form role="form" action="system/signup-system.php" method="POST">
+                            <div class="form-group mb-3">
+                                <div class="input-group input-group-merge input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                    </div>
+                                <input class="form-control" name="Name" placeholder="Name" type="text">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group mb-3">
-                            <div class="input-group input-group-merge input-group-alternative">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                            <div class="form-group mb-3">
+                                <div class="input-group input-group-merge input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    </div>
+                                <input class="form-control" name="Email" placeholder="Email" type="email">
+                                </div>
                             </div>
-                            <input class="form-control" placeholder="Email" type="email">
+                            <div class="form-group">
+                                <div class="input-group input-group-merge input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                    </div>
+                                <input class="form-control" name="Password" placeholder="Password" type="password">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group input-group-merge input-group-alternative">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                            <div class="text-center">
+                                <button type="submit" name="SendData" class="btn btn-primary my-4">Sign Up</button>
                             </div>
-                            <input class="form-control" placeholder="Password" type="password">
+                            <div class="ml-9 col-9">
+                                <a href="signin.php" class="text-light"><small>Already have an account</small></a>
                             </div>
-                        </div>
-                        <div class="text-center">
-                            <button type="button" class="btn btn-primary my-4">Sign Up</button>
-                        </div>
-                        <div class="ml-9 col-9">
-                            <a href="signin.php" class="text-light"><small>Already have an account</small></a>
-                        </div>
                         </form>
                     </div>
                 </div>
