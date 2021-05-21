@@ -21,6 +21,16 @@ SET time_zone = "+00:00";
 -- Database: `penggajian`
 --
 
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `edit_user` (IN `iduser` INT(10), IN `inputnama` VARCHAR(64), IN `inputjabatan` VARCHAR(64))  UPDATE USER SET nama_user = inputnama , jabatan = inputjabatan WHERE id_user = iduser$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `tambah_user` (IN `namaUser` VARCHAR(64), IN `emailUser` VARCHAR(64), IN `passwordUser` VARCHAR(64))  insert into user values(NULL, namaUser, emailUser, passwordUser, 'karyawan', NULL, curdate())$$
+
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -34,7 +44,7 @@ CREATE TABLE `user` (
   `password_user` varchar(64) NOT NULL,
   `level_user` enum('karyawan','admin_financial','admin_personalia','super_admin') NOT NULL,
   `jabatan` varchar(32) DEFAULT NULL,
-  `join_date` date DEFAULT NULL
+  `join_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -43,8 +53,13 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`, `level_user`, `jabatan`, `join_date`) VALUES
 (1, 'Muhammad Karyawan', 'user1@gmail.com', 'user1', 'karyawan', NULL, '2021-05-21'),
-(2, 'user2', 'user2@gmail.com', 'user2', 'karyawan', NULL, '2021-05-21'),
-(3, 'Muhammad Super Admin', 'superadmin@kelompok2.com', 'admin', 'super_admin', NULL, '2021-05-21');
+(2, 'user22', 'user2@gmail.com', 'user2', 'karyawan', 'Full Stek', '2021-05-21'),
+(3, 'Muhammad Super Admin', 'superadmin@kelompok2.com', 'admin', 'super_admin', NULL, '2021-05-21'),
+(4, 'Muhammad Karyawan 66', 'user6@email.com', '1', 'karyawan', NULL, '2021-05-21'),
+(5, 'Muhammad Karyawan 66', 'user6@email.com', '3', 'karyawan', NULL, '2021-05-21'),
+(6, 'Ahmad Admin', 'user7@email.com', 'user7', 'karyawan', NULL, '2021-05-22'),
+(7, 'Ahmad Admin Mustofa', 'user8@email.com', 'user8', 'karyawan', NULL, '2021-05-22'),
+(8, 'Winarto', 'user9@email.com', 'user9', 'karyawan', NULL, '2021-05-22');
 
 --
 -- Indexes for dumped tables
@@ -64,12 +79,9 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-CREATE PROCEDURE tambah_user(IN namaUser VARCHAR(64), IN emailUser VARCHAR(64), IN passwordUser VARCHAR(64))
-INSERT INTO USER VALUES(NULL, namaUser, emailUser, passwordUser, 'karyawan', NULL, CURDATE());
