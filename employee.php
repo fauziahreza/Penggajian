@@ -58,6 +58,17 @@
                                     $search = $_POST["search"];
                                     $select = mysqli_query($connection, "SELECT * FROM user WHERE NAMA_USER LIKE '%$search%'");
                                 }
+                                if(isset($_POST['SendEditedData'])){
+                                    $id_user = $_POST['iduser'];
+                                    $name = $_POST['editnama'];
+                                    $jabatan = $_POST['editjabatan'];
+                                    $check_editEmployee = mysqli_query($connection, "CALL edit_user($id_user, '$name', '$jabatan')");
+                                    if($check_editEmployee){
+                                        echo "<script> document.location = 'index.php?page=employee'; </script>";
+                                    }else{
+                                        echo "<script> alert('[ERROR] Cek database !'); </script>";
+                                    }
+                                };
                                 while ($data = mysqli_fetch_array($select)) {
                             ?>
                             <tr>
@@ -67,7 +78,7 @@
                                 <td><?= $data['join_date'] ?></td>
                                 <td>
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" id="editButton" class="btn btn-primary" data-toggle="modal" data-target="#editEmployee<?= $data['id_user'] ?>">
                                     edit
                                     </button>
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
@@ -75,31 +86,38 @@
                                     </button>
                                 </td>
                             </tr>
+                            <!-- Pop up Edit Employee -->
+                            <div class="modal fade" id="editEmployee<?= $data['id_user'] ?>" tabindex="-1" role="dialog" aria-labelledby="editButton" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Edit Employee : <?= $data['nama_user'] ?></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="" method="POST">
+                                        <div class="modal-body">
+                                            <input type="number" hidden="true" name="iduser" value="<?= $data['id_user'] ?>">
+                                            <label for="editnama">Nama : </label>
+                                            <input type="text" class="form-control" name="editnama" value="<?= $data['nama_user'] ?>">
+                                            <label for="editjabatan">Jabatan : </label>
+                                            <input type="text" class="form-control" name="editjabatan" value="<?= $data['jabatan'] ?>">
+                                            
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" name="SendEditedData" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </div>
+                            </div>
                             <?php } ?>
                         </tbody>
                     </table>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">edit employee</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            ...
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
         </div>
     </div>
 </div>
