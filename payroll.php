@@ -104,90 +104,10 @@
                                         Bank Transfer
                                     </td>
                                     <td>
-                                        Paid
-                                    </td>
-                                    <td>
-                                        <button type="button" class="editprofile fa fa-edit"></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        Fauziah Reza
-                                    </th>
-                                    <td>
-                                        Mobile Developer
-                                    </td>
-                                    <td>
-                                        Rp 5.000.000
-                                    </td>
-                                    <td>
-                                        Bank Transfer
-                                    </td>
-                                    <td>
-                                        Paid
-                                    </td>
-                                    <td>
-                                        <button type="button" class="editprofile fa fa-edit"></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        Fauziah Reza
-                                    </th>
-                                    <td>
-                                        Mobile Developer
-                                    </td>
-                                    <td>
-                                        Rp 5.000.000
-                                    </td>
-                                    <td>
-                                        Bank Transfer
-                                    </td>
-                                    <td>
-                                        Paid
-                                    </td>
-                                    <td>
-                                        <button type="button" class="editprofile fa fa-edit"></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        Fauziah Reza
-                                    </th>
-                                    <td>
-                                        Mobile Developer
-                                    </td>
-                                    <td>
-                                        Rp 5.000.000
-                                    </td>
-                                    <td>
-                                        Bank Transfer
-                                    </td>
-                                    <td>
                                         <label id="notpaidyet">Not paid yet</label> 
                                     </td>
                                     <td>
                                         <button type="button" onclick="payNow('paynow','notpaidyet','balance','periodBalance')" id="paynow" class="btn btn-success btn-sm">Pay now</button>
-                                        <button type="button" class="editprofile fa fa-edit"></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        Fauziah Reza
-                                    </th>
-                                    <td>
-                                        Mobile Developer
-                                    </td>
-                                    <td>
-                                        Rp 5.000.000
-                                    </td>
-                                    <td>
-                                        Bank Transfer
-                                    </td>
-                                    <td>
-                                        Paid
-                                    </td>
-                                    <td>
                                         <button type="button" class="editprofile fa fa-edit"></button>
                                     </td>
                                 </tr>
