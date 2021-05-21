@@ -55,28 +55,7 @@
                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>08.00</td>
-                                        <td>15.00</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm">Full time</button>
-                                        </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td><i class="fa fa-edit" aria-hidden="true"></i> <i class="fa fa-trash" aria-hidden="true"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>13.00</td>
-                                        <td>21.00</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm">Shift time</button>
-                                        </td>
-                                        <td>10 menit</td>
-                                        <td>-</td>
-                                        <td><i class="fa fa-edit" aria-hidden="true"></i> <i class="fa fa-trash" aria-hidden="true"></i></td>
-                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>
