@@ -19,16 +19,22 @@
         <div class="col">
             <div class="card">
                 <div class="card-header border-0">
-                    <div class="row align-items-center">
-                        <div class="col">
-                        </div>
+                    <div class="row">
+                        <div class="col"></div>
                         <div class="col-xl-3 text-right">
-                            <div class="input-group rounded">
-                                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                                <button class="btn btn-dark" id="search-addon">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
+                            <form action="" method="POST">
+                                <div class="input-group rounded">
+                                    <input type="search" name="search" value="<?= $_POST["search"]??'' ?>" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                                    <button class="btn btn-dark" type="submit" id="search-addon">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    <?php if(isset($_POST["search"])){ ?>
+                                        <a href="index.php?page=employee">
+                                            <button type="button" class="btn btn-danger">Reset</button>
+                                        </a>
+                                    <?php } ?>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -48,6 +54,10 @@
                             <?php
                                 $select = mysqli_query($connection, "SELECT * FROM user");
                                 $data = mysqli_query($connection, "SELECT * FROM user");
+                                if (isset($_POST["search"])) {
+                                    $search = $_POST["search"];
+                                    $select = mysqli_query($connection, "SELECT * FROM user WHERE NAMA_USER LIKE '%$search%'");
+                                }
                                 while ($data = mysqli_fetch_array($select)) {
                             ?>
                             <tr>
