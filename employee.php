@@ -45,26 +45,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">
-                                    101
-                                </th>
-                                <td>
-                                    Fauziah Reza
-                                </td>
-                                <td>
-                                    Mobile Developer
-                                </td>
-                                <td>
-                                    2021-01-01
-                                </td>
-                                <td>
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                    edit
-                                    </button>
-                                </td>
-                            </tr>
                             <?php
                                 $select = mysqli_query($connection, "SELECT * FROM user");
                                 $data = mysqli_query($connection, "SELECT * FROM user");
