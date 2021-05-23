@@ -25,11 +25,43 @@ DELIMITER $$
 --
 -- Procedures
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `edit_payroll` (IN `idpayroll` INT(10), IN `editsalary` INT(16))  update payroll set salary = editsalary where id_payroll = idpayroll$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `edit_user` (IN `iduser` INT(10), IN `inputnama` VARCHAR(64), IN `inputjabatan` VARCHAR(64))  UPDATE USER SET nama_user = inputnama , jabatan = inputjabatan WHERE id_user = iduser$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `tambah_user` (IN `namaUser` VARCHAR(64), IN `emailUser` VARCHAR(64), IN `passwordUser` VARCHAR(64))  insert into user values(NULL, namaUser, emailUser, passwordUser, 'karyawan', NULL, curdate())$$
 
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payroll`
+--
+
+CREATE TABLE `payroll` (
+  `id_payroll` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `year_filter` enum('2020','2021') NOT NULL,
+  `month_filter` enum('January','February','March','April','May','June','July','August','September','October','November','December') NOT NULL,
+  `salary` int(11) DEFAULT NULL,
+  `payment_method` enum('Bank Transfer','OVO','DANA','Gopay') DEFAULT NULL,
+  `status_paid` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `payroll`
+--
+
+INSERT INTO `payroll` (`id_payroll`, `id_user`, `year_filter`, `month_filter`, `salary`, `payment_method`, `status_paid`) VALUES
+(20, 1, '2021', 'May', NULL, NULL, 1),
+(21, 2, '2021', 'May', NULL, NULL, 1),
+(22, 3, '2021', 'May', 5000, NULL, 0),
+(23, 4, '2021', 'May', NULL, NULL, 0),
+(24, 5, '2021', 'May', NULL, NULL, 0),
+(25, 6, '2021', 'May', NULL, NULL, 0),
+(26, 7, '2021', 'May', NULL, NULL, 0),
+(27, 8, '2021', 'May', NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -66,6 +98,13 @@ INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`, `leve
 --
 
 --
+-- Indexes for table `payroll`
+--
+ALTER TABLE `payroll`
+  ADD PRIMARY KEY (`id_payroll`),
+  ADD KEY `id_user` (`id_user`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -74,6 +113,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `payroll`
+--
+ALTER TABLE `payroll`
+  MODIFY `id_payroll` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `user`
