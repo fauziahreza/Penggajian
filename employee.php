@@ -53,7 +53,6 @@
                         <tbody>
                             <?php
                                 $select = mysqli_query($connection, "SELECT * FROM user");
-                                $data = mysqli_query($connection, "SELECT * FROM user");
                                 if (isset($_POST["search"])) {
                                     $search = $_POST["search"];
                                     $select = mysqli_query($connection, "SELECT * FROM user WHERE NAMA_USER LIKE '%$search%'");
