@@ -49,7 +49,7 @@
                         Rp 5.000.000
                     </td>
                     <td>
-                        <a href="DetailRincianGaji.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Detail</a>
+                        <a href="index.php?page=DetailRincianGaji" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Detail</a>
                     </td>
                 </tr>
             </tbody>

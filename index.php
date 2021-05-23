@@ -75,16 +75,16 @@ if (!isset($_SESSION["email_user"])) {
               </a>
             </li>
             <?php }elseif(($_SESSION['level_user'] == 'karyawan')){ ?>
-                <li class="nav-item">
-              <a class="nav-link " href="index.php?page=JadwalKerja">
-                <i class="ni ni-bullet-list-67 text-default"></i>
-                <span class="nav-link-text">Jawdal Kerja</span>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php?page=Attendance">
+                <i class="ni ni-watch-time text-orange"></i>
+                <span class="nav-link-text">Attendance</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?page=JamKerja">
-                <i class="ni ni-watch-time text-orange"></i>
-                <span class="nav-link-text">Jam Kerja</span>
+              <a class="nav-link " href="index.php?page=JadwalKerja">
+                <i class="ni ni-bullet-list-67 text-default"></i>
+                <span class="nav-link-text">Schedule</span>
               </a>
             </li>
             <li class="nav-item">
