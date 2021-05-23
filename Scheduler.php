@@ -23,20 +23,31 @@
                                 <div class="col">
                                     <div class="row">
                                         <div class='col-xl-4'>
+                                        <label for="yearpicker">Year</label>
+                                            <select name="yearpicker" id="yearpicker">
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                            </select>
                                             <label for="monthpicker">Month:</label>
-                                            <input type="month" id="monthpicker" name="monthpicker" min="2020-01" value="2021-04">
+                                            <select name="monthpicker" id="monthpicker">
+                                                <option value="may">May</option>
+                                                <option value="april">April</option>
+                                                <option value="march">March</option>
+                                                <option value="february">February</option>
+                                            </select>
+                                            <label for="weekpicker"></label>
+                                            <select name="weekpicker" id="weekpicker">
+                                                <option value="week1">Week 1</option>
+                                                <option value="week2">Week 2</option>
+                                                <option value="week3">Week 3</option>
+                                                <option value="week4">Week 4</option>
+                                            </select>
                                         </div>
                                         <div class="dropdown">
-                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Week 1
-                                            </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Week 1</a>
-                                            <a class="dropdown-item" href="#">Week 2</a>
-                                            <a class="dropdown-item" href="#">Week 3</a>
-                                            <a class="dropdown-item" href="#">Week 4</a>
+                                            
                                         </div>
-                                    </div>
                                         <div class="col">
 
                                         </div>
