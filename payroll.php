@@ -129,19 +129,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">Muhammad Admin</th>
-                                    <td>Mobile Developer</td>
-                                    <td>Rp 5.000.000</td>
-                                    <td>Bank Transfer</td>
-                                    <td>
-                                        <label id="notpaidyet">Not paid yet</label> 
-                                    </td>
-                                    <td>
-                                        <button type="button" onclick="payNow('paynow','notpaidyet','balance','periodBalance')" id="paynow" class="btn btn-success btn-sm">Pay now</button>
-                                        <button type="button" class="editprofile fa fa-edit"></button>
-                                    </td>
-                                </tr>
                                 <?php 
                                     $select = mysqli_query($connection, "SELECT * FROM payroll INNER JOIN user ON payroll.id_user = user.id_user WHERE year_filter = '$selected_year' AND month_filter = '$selected_month'");
                                     $selectuser = mysqli_query($connection, "SELECT * FROM user");

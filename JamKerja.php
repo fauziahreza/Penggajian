@@ -35,9 +35,7 @@
                                         <th scope="col">Jam Masuk</th>
                                         <th scope="col">Jam Pulang</th>
                                         <th scope="col">Jenis</th>
-                                        <th scope="col">Keterlambatan</th>
                                         <th scope="col">Lembur</th>
-                                        <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -46,16 +44,10 @@
                                         <td>08.00</td>
                                         <td>17.00</td>
                                         <td>
-                                            <button type="button" class="btn btn-primary btn-sm">Full time</button>
+                                        Full time
                                         </td>
-                                        <td>3 menit</td>
                                         <td>2 jam</td>
-                                        <td>
-                                            <i class="fa fa-edit" aria-hidden="true"></i>
-                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                        </td>
                                     </tr>
-
                                 </tbody>
                             </table>
                         </div>

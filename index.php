@@ -74,9 +74,6 @@ if (!isset($_SESSION["email_user"])) {
                 <span class="nav-link-text">Scheduler</span>
               </a>
             </li>
-            <li class="nav-item fixed-bottom">
-              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#popupOnlineAdmin">Online Admin</button>
-            </li>
             <?php }elseif(($_SESSION['level_user'] == 'karyawan')){ ?>
                 <li class="nav-item">
               <a class="nav-link " href="index.php?page=JadwalKerja">
@@ -223,108 +220,6 @@ if (!isset($_SESSION["email_user"])) {
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Popup Online Admin -->
-  <div class="modal fade" id="popupOnlineAdmin" tabindex="-1" role="dialog" aria-labelledby="popupOnlineAdmin" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Online Admin</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="table-responsive">
-            <!-- Projects table -->
-            <table class="table align-items-center table-flush">
-              <thead class="thead-light">
-                <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">Position</th>
-                  <th scope="col">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <th scope="row">
-                      Fauziah Reza
-                      </th>
-                      <td>
-                        Admin Financial
-                      </td>
-                      <td>
-                        <span class="badge badge-dot mr--4">
-                          <i class="bg-success"></i>
-                          <span class="status">Online</span>
-                        </span>
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">
-                      Fauziah Reza
-                      </th>
-                      <td>
-                        Admin Financial
-                      </td>
-                      <td>
-                        <span class="badge badge-dot mr--4">
-                          <i class="bg-success"></i>
-                          <span class="status">Online</span>
-                        </span>
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">
-                      Fauziah Reza
-                      </th>
-                      <td>
-                        Admin Personalia
-                      </td>
-                      <td>
-                        <span class="badge badge-dot mr--4">
-                          <i class="bg-success"></i>
-                          <span class="status">Online</span>
-                        </span>
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">
-                      Fauziah Reza
-                      </th>
-                      <td>
-                        Admin Financial
-                      </td>
-                      <td>
-                        <span class="badge badge-dot mr--4">
-                          <i class="bg-success"></i>
-                          <span class="status">Online</span>
-                        </span>
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">
-                      Fauziah Reza
-                      </th>
-                      <td>
-                        Admin Financial
-                      </td>
-                      <td>
-                        <span class="badge badge-dot mr--4">
-                          <i class="bg-gray"></i>
-                          <span class="status">Disconnect</span>
-                        </span>
-                      </td>
-                  </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
