@@ -59,8 +59,20 @@
     $iduser = $_SESSION["id_user"];
     $cur_date = date('Y-m-d');
     if(isset($_POST['submit_attendance'])){
-        mysqli_query($connection,"UPDATE attendance SET attendance_status = 1 WHERE id_user = $iduser AND attendance_date = '$cur_date'");
-        echo "<script> document.location = 'index.php?page=AttendanceHistory'; </script>";
+        // if attendance data doesn't exist
+        mysqli_query($connection, "INSERT INTO attendance (id_user, attendance_date, attendance_status)
+            SELECT * FROM (SELECT $iduser, '$cur_date', 1) AS tmp
+            WHERE NOT EXISTS ( 
+            SELECT id_user, attendance_date FROM attendance
+            WHERE id_user = $iduser
+            AND attendance_date = '$cur_date')");
+        // if attendance data is exist but attendance_status = 0
+        $update_query = mysqli_query($connection,"UPDATE attendance SET attendance_status = 1 WHERE id_user = $iduser AND attendance_date = '$cur_date'");
+        if($update_query){
+            echo "<script> document.location = 'index.php?page=AttendanceHistory'; </script>";
+        }else{
+            echo "<script> alert('ERROR! Check Either Database or Source Code'); </script>";
+        }
     }
 ?>
 
