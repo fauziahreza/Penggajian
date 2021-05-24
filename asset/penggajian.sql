@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2021 at 08:54 AM
+-- Generation Time: May 24, 2021 at 12:17 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -32,6 +32,29 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `edit_user` (IN `iduser` INT(10), IN
 CREATE DEFINER=`root`@`localhost` PROCEDURE `tambah_user` (IN `namaUser` VARCHAR(64), IN `emailUser` VARCHAR(64), IN `passwordUser` VARCHAR(64))  insert into user values(NULL, namaUser, emailUser, passwordUser, 'karyawan', NULL, curdate())$$
 
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attendance`
+--
+
+CREATE TABLE `attendance` (
+  `id_attendance` int(16) NOT NULL,
+  `id_user` int(16) NOT NULL,
+  `attendance_date` varchar(16) DEFAULT NULL,
+  `attendance_status` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `attendance`
+--
+
+INSERT INTO `attendance` (`id_attendance`, `id_user`, `attendance_date`, `attendance_status`) VALUES
+(1, 1, '2021-05-24', 1),
+(2, 2, '2021-05-24', 0),
+(3, 1, '2021-05-23', 0),
+(4, 1, '2021-05-21', 0);
 
 -- --------------------------------------------------------
 
@@ -85,7 +108,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`, `level_user`, `jabatan`, `join_date`) VALUES
 (1, 'Muhammad Karyawan', 'user1@gmail.com', 'user1', 'karyawan', NULL, '2021-05-21'),
-(2, 'user22', 'user2@gmail.com', 'user2', 'karyawan', 'Full Stek', '2021-05-21'),
+(2, 'user222', 'user2@gmail.com', 'user2', 'karyawan', 'Full Steks', '2021-05-21'),
 (3, 'Muhammad Super Admin', 'superadmin@kelompok2.com', 'admin', 'super_admin', NULL, '2021-05-21'),
 (4, 'Muhammad Karyawan 66', 'user6@email.com', '1', 'karyawan', NULL, '2021-05-21'),
 (5, 'Muhammad Karyawan 66', 'user6@email.com', '3', 'karyawan', NULL, '2021-05-21'),
@@ -96,6 +119,12 @@ INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`, `leve
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `attendance`
+--
+ALTER TABLE `attendance`
+  ADD PRIMARY KEY (`id_attendance`);
 
 --
 -- Indexes for table `payroll`
@@ -113,6 +142,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `attendance`
+--
+ALTER TABLE `attendance`
+  MODIFY `id_attendance` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `payroll`
