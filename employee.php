@@ -67,7 +67,16 @@
                                     }else{
                                         echo "<script> alert('[ERROR] Cek database !'); </script>";
                                     }
-                                };
+                                }
+                                if(isset($_POST['submitDeleteEmployee'])){
+                                    $iduser = $_POST['iduser'];
+                                    $delete_query = mysqli_query($connection, "DELETE FROM user WHERE id_user = $iduser");
+                                    if($delete_query){
+                                        echo "<script> document.location = window.location.href; </script>";
+                                    }else{
+                                        echo "<script> alert('ERROR! Check Either Database or Source Code'); </script>";
+                                    }
+                                }
                                 while ($data = mysqli_fetch_array($select)) {
                             ?>
                             <tr>
@@ -80,7 +89,7 @@
                                     <button type="button" id="editButton" class="btn btn-primary" data-toggle="modal" data-target="#editEmployee<?= $data['id_user'] ?>">
                                     edit
                                     </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" id="deleteButton" class="btn btn-danger" data-toggle="modal" data-target="#deleteEmployee<?= $data['id_user'] ?>">
                                     hapus
                                     </button>
                                 </td>
@@ -107,6 +116,31 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                             <button type="submit" name="SendEditedData" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Pop up Edit Employee -->
+                            <!-- Pop up Delete Employee -->
+                            <div class="modal fade" id="deleteEmployee<?= $data['id_user'] ?>" tabindex="-1" role="dialog" aria-labelledby="deleteButton" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Delete Employee : <?= $data['nama_user'] ?></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="" method="POST">
+                                        <div class="modal-body">
+                                            <input type="number" hidden="true" name="iduser" value="<?= $data['id_user'] ?>">
+                                            <h1>
+                                                Are you sure?
+                                            </h1>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                                            <button type="submit" name="submitDeleteEmployee" class="btn btn-danger">Of Course!</button>
                                         </div>
                                     </form>
                                     </div>
