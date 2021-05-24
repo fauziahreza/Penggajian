@@ -1,3 +1,12 @@
+<?php 
+  include("system/connection.php");
+  $selectattendance = mysqli_query($connection,"SELECT * FROM attendance INNER JOIN user ON attendance.id_user = user.id_user WHERE attendance_status = 1 LIMIT 3");
+  $selectuser = mysqli_query($connection, "SELECT * FROM user ORDER BY join_date DESC LIMIT 6");
+  $cur_year = date('Y');
+  $cur_month = date('M');
+  $selectpayroll = mysqli_query($connection, "SELECT * FROM payroll INNER JOIN user ON payroll.id_user = user.id_user WHERE status_paid = 1 AND year_filter = '$cur_year' AND month_filter = '$cur_month' LIMIT 3");
+
+?>
 <!-- Header -->
 <div class="header gradient-bg pb-6">
   <div class="container-fluid">
@@ -30,7 +39,14 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0">Number Of Employee</h5>
-                  <span class="h2 font-weight-bold mb-0">40</span>
+                  <span class="h2 font-weight-bold mb-0">
+                  <?php 
+                    $numberofemployee = 0;
+                    $countuser = mysqli_query($connection, "SELECT * FROM user"); 
+                    foreach($countuser as $counternumber){$numberofemployee+=1;} 
+                    echo "$numberofemployee"; 
+                  ?>
+                  </span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -56,97 +72,23 @@
                       <table class="table align-items-center table-flush">
                           <thead class="thead-light">
                               <tr>
-                                  <th scope="col">ID</th>
                                   <th scope="col">Staff Name</th>
-                                  <th scope="col">Position</th>
-                                  <th scope="col">join data</th>
+                                  <th scope="col">join date</th>
                               </tr>
                           </thead>
                           <tbody>
+                            <?php 
+                              foreach($selectuser as $data){
+                            ?>
                             <tr>
-                                <th scope="row">
-                                    101
-                                </th>
                                 <td>
-                                    Fauziah Reza
+                                    <?= $data['nama_user'] ?>
                                 </td>
                                 <td>
-                                    Mobile Developer
-                                </td>
-                                <td>
-                                    2021-01-01
+                                    <?= $data['join_date'] ?>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row">
-                                    101
-                                </th>
-                                <td>
-                                    Fauziah Reza
-                                </td>
-                                <td>
-                                    Mobile Developer
-                                </td>
-                                <td>
-                                    2021-01-01
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    101
-                                </th>
-                                <td>
-                                    Fauziah Reza
-                                </td>
-                                <td>
-                                    Mobile Developer
-                                </td>
-                                <td>
-                                    2021-01-01
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    101
-                                </th>
-                                <td>
-                                    Fauziah Reza
-                                </td>
-                                <td>
-                                    Mobile Developer
-                                </td>
-                                <td>
-                                    2021-01-01
-                                </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">
-                                  101
-                              </th>
-                              <td>
-                                  Fauziah Reza
-                              </td>
-                              <td>
-                                  Mobile Developer
-                              </td>
-                              <td>
-                                  2021-01-01
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">
-                                  101
-                              </th>
-                              <td>
-                                  Fauziah Reza
-                              </td>
-                              <td>
-                                  Mobile Developer
-                              </td>
-                              <td>
-                                  2021-01-01
-                              </td>
-                            </tr>
+                            <?php } ?>
                           </tbody>
                       </table>
                     </div>
@@ -163,82 +105,69 @@
 <!-- Page content -->
 <div class="container-fluid mt--6">
   <div class="row">
-    <div class="col-xl-8">
+    <div class="col-xl-7">
       <div class="card">
         <div class="card-header border-0">
           <div class="row align-items-center">
             <div class="col">
-              <h3 class="mb-0">Timesheet</h3>
+              <h3 class="mb-0">Present</h3>
             </div>
             <div class="col text-right">
-              <a href="#!" class="btn btn-sm btn-primary">See all</a>
+              <a href="index.php?page=AbsentEmployee" class="btn btn-sm btn-primary">See all</a>
             </div>
           </div>
         </div>
         <div class="table-responsive">
           <!-- Projects table -->
           <table class="table align-items-center table-flush">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">Staff Name</th>
-                <th scope="col">Mon</th>
-                <th scope="col">Tue</th>
-                <th scope="col">Wed</th>
-                <th scope="col">Thu</th>
-                <th scope="col">Fri</th>
-                <th scope="col">Sat</th>
-                <th scope="col">Sun</th>
-                <th scope="col">Overtime Hours</th>
-                <th scope="col">Weekly Hours</th>
-              </tr>
-            </thead>
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Staff Name</th>
+              <th scope="col">Date</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
             <tbody>
+              <?php foreach($selectattendance as $data){ ?>
                 <tr>
-                    <th scope="row">
-                    Fauziah Reza
-                    </th>
-                    <td>
-                        8
-                    </td>
-                    <td>
-                        8
-                    </td>
-                    <td>
-                        8
-                    </td>
-                    <td>
-                        8
-                    </td>
-                    <td>
-                        8
-                    </td>
-                    <td>
-                        8
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        3
-                    </td>
-                    <td>
-                        48
-                    </td>
+                <th scope="row">
+                      <?= $data['id_user'] ?>
+                  </th>
+                  <td>
+                      <?= $data['nama_user'] ?>
+                  </td>
+                  <td>
+                      <?= $data['attendance_date'] ?>
+                  </td>
+                  <td>
+                  <?php 
+                    if($data['attendance_status'] == 1){ 
+                      echo '<span class="badge badge-dot mr--4">
+                      <i class="bg-success"></i>Attend
+                      </span>';
+                      }else{ 
+                      echo '<span class="badge badge-dot mr--4">
+                      <i class="bg-danger"></i>Not Attend
+                      </span>';
+                    } ?>
+                  </td>
                 </tr>
+              <?php } ?> 
             </tbody>
           </table>
         </div>
       </div>
     </div>
-    <div class="col-xl-4">
+    <div class="col-xl-5">
       <div class="card">
         <div class="card-header border-0">
           <div class="row align-items-center">
             <div class="col">
-              <h3 class="mb-0">Activity</h3>
+              <h3 class="mb-0">Payroll</h3>
             </div>
             <div class="col text-right">
-              <a href="payroll.html" class="btn btn-sm btn-primary">See all</a>
+              <a href="index.php?page=payroll" class="btn btn-sm btn-primary">See all</a>
             </div>
           </div>
         </div>
@@ -248,22 +177,26 @@
             <thead class="thead-light">
               <tr>
                 <th scope="col">STAFF NAME</th>
-                <th scope="col">Position</th>
+                <th scope="col">MONTH</th>
                 <th scope="col">STATUS</th>
               </tr>
             </thead>
             <tbody>
+              <?php 
+                foreach($selectpayroll as $data){
+              ?>
               <tr>
                 <th scope="row">
-                  Fauziah Reza 
+                  <?= $data['nama_user'] ?>
                 </th>
                 <td>
-                  Mobile Dev
+                  <?= $cur_month ?>
                 </td>
                 <td>
-                  Paid
+                <?php if($data['status_paid']){echo "Paid";}else{echo "Not paid yet ";} ?>
                 </td>
               </tr>
+              <?php } ?>
             </tbody>
           </table>
         </div>
