@@ -68,12 +68,6 @@ if (!isset($_SESSION["email_user"])) {
                 <span class="nav-link-text">Absent Employee</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.php?page=Scheduler">
-                <i class="ni ni-calendar-grid-58 text-default"></i>
-                <span class="nav-link-text">Scheduler</span>
-              </a>
-            </li>
             <?php }elseif(($_SESSION['level_user'] == 'karyawan')){ ?>
             <li class="nav-item">
               <a class="nav-link" href="index.php?page=Attendance">
@@ -82,9 +76,9 @@ if (!isset($_SESSION["email_user"])) {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="index.php?page=JadwalKerja">
+              <a class="nav-link " href="index.php?page=AttendanceHistory">
                 <i class="ni ni-bullet-list-67 text-default"></i>
-                <span class="nav-link-text">Schedule</span>
+                <span class="nav-link-text">Attendance History</span>
               </a>
             </li>
             <li class="nav-item">
@@ -143,7 +137,7 @@ if (!isset($_SESSION["email_user"])) {
         if ($_SESSION['level_user'] == 'super_admin'){ 
             include("overview.php");
         }elseif($_SESSION['level_user'] == 'karyawan'){
-            include("JadwalKerja.php");
+            include("attendance.php");
         }
     } else {
         include($_GET["page"] . ".php");
