@@ -20,6 +20,9 @@ if ($num == 0) {
         $_SESSION["id_user"] = $data["id_user"];
         $_SESSION["email_user"] = $data["email_user"];
         $_SESSION["nama_user"] = $data["nama_user"];
+        $_SESSION["alamat_user"] = $data["alamat_user"];
+        $_SESSION["nohp"] = $data["nohp"];
+        $_SESSION["password_user"] = $data["password_user"];
         $_SESSION["level_user"] = $data["level_user"];
     }
     header("location:../index.php");

@@ -3,6 +3,7 @@ session_start();
 if (!isset($_SESSION["email_user"])) {
     header("location: intro.php");
 }
+include("system/connection.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -160,64 +161,50 @@ if (!isset($_SESSION["email_user"])) {
               <!-- Profile picture -->
               <i class="fa fa-user fa-10x"></i>
             </div>
+            <?php
+              $iduser = $_SESSION['id_user'];
+              $selectuser = mysqli_query($connection,"SELECT * FROM user WHERE id_user = $iduser"); 
+              foreach($selectuser as $data){
+              ?>
             <div class="col-8">
-              <form>
-                <div class="row my-2">
-                  <div class="col mr-auto">
-                    <label id="labelProfileName"><?= $_SESSION["nama_user"] ?></label>
-                    <input type="text" id="inputProfileName" style="display: none;" size="50">
-                  </div>
-                  <div class="col-2">
-                    <button onclick="showInputForm('inputProfileName', 'labelProfileName', this); return false;" class="editprofile fa fa-edit"></button>
-                  </div>
+              <form action="" method="POST">
+                <div class="modal-body">
+                    <input type="number" hidden="true" name="iduser" value="<?= $_SESSION['id_user'] ?>">
+                    <label for="editnama">Nama : </label>
+                    <input type="text" class="form-control" name="editnama" value="<?= $data['nama_user'] ?>">
+                    <label for="editjabatan">Email : </label>
+                    <input type="text" class="form-control" name="editemail" value="<?= $data['email_user'] ?>">
+                    <label for="editjabatan">Alamat : </label>
+                    <input type="text" class="form-control" name="editalamat" value="<?= $data['alamat_user'] ?>">
+                    <label for="editjabatan">Nomor Telepon : </label>
+                    <input type="text" class="form-control" name="editnohp" value="<?= $data['nohp'] ?>">
+                    <label for="editjabatan">Password : </label>
+                    <input type="password" class="form-control" id=editpassword name="editpassword" value="<?= $data['password_user'] ?>">
                 </div>
-                <div class="row my-2">
-                  <div class="col mr-auto">
-                    <label id="labelProfileAddress">Telang 123, Bangkalan, Indonesia 61971</label>
-                    <input type="text" id="inputProfileAddress" style="display: none;" size="50">
-                  </div>
-                  <div class="col-2">
-                    <button onclick="showInputForm('inputProfileAddress', 'labelProfileAddress', this); return false;" class="editprofile fa fa-edit"></button>
-                  </div>
-                </div>
-                <div class="row my-2">
-                  <div class="col mr-auto">
-                    <label id="labelProfileEmail">email@gmail.com</label>
-                    <input type="text" id="inputProfileEmail" style="display: none;" size="50">
-                  </div>
-                  <div class="col-2">
-                    <button onclick="showInputForm('inputProfileEmail', 'labelProfileEmail', this); return false;" class="editprofile fa fa-edit"></button>
-                  </div>
-                </div>
-                <div class="row my-2">
-                  <div class="col mr-auto">
-                    <label id="labelProfilePhone">0812345678</label>
-                    <input type="text" id="inputProfilePhone" style="display: none;" size="50">
-                  </div>
-                  <div class="col-2">
-                    <button onclick="showInputForm('inputProfilePhone', 'labelProfilePhone', this); return false;" class="editprofile fa fa-edit"></button>
-                  </div>
-                </div>
-                <div class="row my-2">
-                  <div class="col mr-auto">
-                    <label id="labelProfilePassword">Password</label>
-                    <input type="password" id="inputProfilePassword" style="display: none;" size="50">
-                  </div>
-                  <div class="col-2">
-                    <button onclick="showInputForm('inputProfilePassword', 'labelProfilePassword', this); return false;" class="editprofile fa fa-edit"></button>
-                  </div>
-                </div>
-              </form>
             </div>
+            <?php } ?>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" name="submitData" class="btn btn-primary">Save changes</button>
         </div>
+        </form>
       </div>
     </div>
   </div>
+  <?php
+    if(isset($_POST['submitData'])){
+      $editnama = $_POST['editnama'];
+      $_SESSION['nama_user'] = $_POST['editnama'];
+      $editemail = $_POST['editemail'];
+      $editalamat = $_POST['editalamat'];
+      $editnohp = $_POST['editnohp'];
+      $editpassword = $_POST['editpassword'];
+      mysqli_query($connection,"UPDATE user SET nama_user = '$editnama', email_user = '$editemail', alamat_user = '$editalamat', nohp = '$editnohp', password_user = '$editpassword' WHERE id_user = $iduser");
+      echo "<script> document.location = window.location.href; </script>";
+    }
+  ?>
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="asset/library/vendor/jquery/dist/jquery.min.js"></script>
