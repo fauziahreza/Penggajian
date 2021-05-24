@@ -137,19 +137,11 @@
                             </thead>
                             <tbody>
                                 <?php 
-            //disini han, hasil search e masih ga muncul
-                                    $select = mysqli_query($connection, "SELECT * FROM payroll");
+                                    $select = mysqli_query($connection, "SELECT * FROM payroll INNER JOIN user ON payroll.id_user = user.id_user WHERE year_filter = '$selected_year' AND month_filter = '$selected_month'");
                                     if (isset($_POST["search"])) {
                                         $search = $_POST["search"];
-                                        $select = mysqli_query($connection, "SELECT * FROM payroll INNER JOIN user ON payroll.id_user=user.id_user WHERE NAMA_USER LIKE '%$search%'");
-                                    } //sampe sini
-                                    
-                                    //$select = mysqli_query($connection, "SELECT * FROM payroll");
-                                    //if (isset($_POST["search"])) {
-                                        //$search = $_POST["search"];
-                                        //$select = mysqli_query($connection, "SELECT * FROM user INNER JOIN payroll ON payroll.id_user = user.id_user WHERE nama_user LIKE '%$search%'");
-                                    //}
-                                    $select = mysqli_query($connection, "SELECT * FROM payroll INNER JOIN user ON payroll.id_user = user.id_user WHERE year_filter = '$selected_year' AND month_filter = '$selected_month'");
+                                        $select = mysqli_query($connection, "SELECT * FROM payroll INNER JOIN user ON payroll.id_user=user.id_user WHERE NAMA_USER LIKE '%$search%' AND year_filter = '$selected_year' AND month_filter = '$selected_month'");
+                                    } 
                                     $selectuser = mysqli_query($connection, "SELECT * FROM user");
                                     if (isset($_POST["paynow"])) {
                                         $varStatusPaid = $_POST["statusPaid"];

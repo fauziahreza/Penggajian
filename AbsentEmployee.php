@@ -52,13 +52,11 @@
                                     </tr>
                                 </thead>
                                 <?php 
-            //disini han, hasil search e masih ga muncul
-                                    $select = mysqli_query($connection, "SELECT * FROM AbsentEmployee");
+                                    $select = mysqli_query($connection,"SELECT * FROM attendance INNER JOIN user ON attendance.id_user = user.id_user");
                                     if (isset($_POST["search"])) {
                                         $search = $_POST["search"];
-                                        $select = mysqli_query($connection, "SELECT * FROM AbsentEmployee INNER JOIN user ON AbsentEmployee.id_user=user.id_user WHERE NAMA_USER LIKE '%$search%'");
-                                    } //sampe sini
-                                    $select = mysqli_query($connection,"SELECT * FROM attendance INNER JOIN user ON attendance.id_user = user.id_user");
+                                        $select = mysqli_query($connection, "SELECT * FROM attendance INNER JOIN user ON attendance.id_user = user.id_user WHERE nama_user LIKE '%$search%'");
+                                    }
                                     if(isset($_POST['editattendance'])){
                                         $attendance = $_POST['attendance'];
                                         echo $attendance;
