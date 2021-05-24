@@ -21,15 +21,21 @@
                     <div class="card">
                         <div class="card-header border-0">
                             <div class="row align-items-center">
-                                <div class="col">
-                                </div>
+                                <div class="col"></div>
                                 <div class="col-xl-3 text-right">
-                                    <div class="input-group rounded">
-                                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                                        <span class="input-group-text border-0" id="search-addon">
-                                            <i class="fas fa-search"></i>
-                                          </span>
-                                    </div>
+                                    <form action="" method="POST">
+                                        <div class="input-group rounded">
+                                            <input type="search" name="search" value="<?= $_POST["search"]??'' ?>" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                                            <button class="btn btn-dark" type="submit" id="search-addon">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                            <?php if(isset($_POST["search"])){ ?>
+                                                <a href="index.php?page=AbsentEmployee">
+                                                    <button type="button" class="btn btn-danger">Reset</button>
+                                                </a>
+                                            <?php } ?>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -46,6 +52,12 @@
                                     </tr>
                                 </thead>
                                 <?php 
+            //disini han, hasil search e masih ga muncul
+                                    $select = mysqli_query($connection, "SELECT * FROM AbsentEmployee");
+                                    if (isset($_POST["search"])) {
+                                        $search = $_POST["search"];
+                                        $select = mysqli_query($connection, "SELECT * FROM AbsentEmployee INNER JOIN user ON AbsentEmployee.id_user=user.id_user WHERE NAMA_USER LIKE '%$search%'");
+                                    } //sampe sini
                                     $select = mysqli_query($connection,"SELECT * FROM attendance INNER JOIN user ON attendance.id_user = user.id_user");
                                     if(isset($_POST['editattendance'])){
                                         $attendance = $_POST['attendance'];
