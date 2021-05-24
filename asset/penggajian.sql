@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2021 at 12:17 PM
+-- Generation Time: May 24, 2021 at 01:07 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -107,8 +107,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`, `level_user`, `jabatan`, `join_date`) VALUES
-(1, 'Muhammad Karyawan', 'user1@gmail.com', 'user1', 'karyawan', NULL, '2021-05-21'),
-(2, 'user222', 'user2@gmail.com', 'user2', 'karyawan', 'Full Steks', '2021-05-21'),
+(1, 'Muhammad Karyawan', 'user1@gmail.com', 'user1', 'karyawan', 'Senior Mobile Developer', '2021-05-21'),
+(2, 'Muhammad Karyawan Teladan', 'user2@gmail.com', 'user2', 'karyawan', 'Junior Mobile Developer', '2021-05-21'),
 (3, 'Muhammad Super Admin', 'superadmin@kelompok2.com', 'admin', 'super_admin', NULL, '2021-05-21'),
 (4, 'Muhammad Karyawan 66', 'user6@email.com', '1', 'karyawan', NULL, '2021-05-21'),
 (5, 'Muhammad Karyawan 66', 'user6@email.com', '3', 'karyawan', NULL, '2021-05-21'),
