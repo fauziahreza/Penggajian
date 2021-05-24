@@ -17,6 +17,7 @@ if ($num == 0) {
 <?php
 } else {
     while ($data = mysqli_fetch_array($select)) {
+        $_SESSION["id_user"] = $data["id_user"];
         $_SESSION["email_user"] = $data["email_user"];
         $_SESSION["nama_user"] = $data["nama_user"];
         $_SESSION["level_user"] = $data["level_user"];

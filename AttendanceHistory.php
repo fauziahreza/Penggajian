@@ -35,7 +35,8 @@
                   </thead>
                   <tbody>
                     <?php
-                      $select = mysqli_query($connection,"SELECT * FROM attendance");
+                      $iduser = $_SESSION["id_user"];
+                      $select = mysqli_query($connection,"SELECT * FROM attendance WHERE id_user = $iduser");
                       $tempnumber = 1;
                       foreach($select as $data){
                     ?>
@@ -44,12 +45,19 @@
                           <?= $tempnumber ?>
                       </th>
                       <td>
-                          <?php $cur_date = date('Y M d'); echo $cur_date; ?>
+                          <?= $data['attendance_date'] ?>
                       </td>
                       <td>
-                        <span class="badge badge-dot mr--4">
+                        <?php 
+                        if($data['attendance_status'] == 1){ 
+                          echo '<span class="badge badge-dot mr--4">
                           <i class="bg-success"></i>Attend
-                        </span>
+                          </span>';
+                        }else{ 
+                          echo '<span class="badge badge-dot mr--4">
+                          <i class="bg-danger"></i>Not Attend
+                          </span>';
+                        } ?>
                       </td>
                     </tr>
                     <?php
