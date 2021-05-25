@@ -58,12 +58,15 @@
                                         $select = mysqli_query($connection, "SELECT * FROM attendance INNER JOIN user ON attendance.id_user = user.id_user WHERE nama_user LIKE '%$search%'");
                                     }
                                     if(isset($_POST['editattendance'])){
+										$cur_date = date('Y-m-d');
                                         $attendance = $_POST['attendance'];
+										$id_attendance = $_POST['id_attendance'];
                                         echo $attendance;
-                                        //mysqli_query($connection,"UPDATE attendance SET attendance_status = 1 WHERE id_user = $iduser AND attendance_date = '$cur_date'");
+										echo $id_attendance;
+                                        mysqli_query($connection,"UPDATE attendance SET attendance_status = $attendance WHERE id_attendance = $id_attendance AND attendance_date = '$cur_date'");
                                         echo "<script> document.location = 'index.php?page=AbsentEmployee'; </script>";
                                     }
-                                    foreach($select as $data){
+                                   while ($data = mysqli_fetch_array($select)) {
                                 ?>
                                 <tbody>
                                     <tr>
@@ -82,6 +85,7 @@
                                             echo '<span class="badge badge-dot mr--4">
                                             <i class="bg-success"></i>Attend
                                             </span>';
+
                                             }else{ 
                                             echo '<span class="badge badge-dot mr--4">
                                             <i class="bg-danger"></i>Not Attend
@@ -89,13 +93,13 @@
                                         } ?>
                                         </td>
                                         <td>
-                                            <div class="col-2">
-                                                <button type="button" class="editprofile fa fa-edit" data-toggle="modal" data-target="#edit_attend"></button>
+                                            <div class="col-4">
+                                                <button type="button" class="editprofile fa fa-edit" data-toggle="modal" data-target="#edit_attend<?= $data['id_attendance'] ?>"></button>
                                             </div>
                                         </td>
                                     </tr>
                                     <!-- Modal -->
-                                    <div id="edit_attend" class="modal fade" role="dialog">
+                                    <div  class="modal fade" id="edit_attend<?= $data['id_attendance'] ?>" role="dialog">
                                         <div class="modal-dialog">
                                             <!-- konten modal-->
                                             <div class="modal-content">
@@ -109,12 +113,14 @@
                                                 <div class="modal-body">
                                                     <p>Select Conditions :</p>
                                                     <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
+													<input type="number" name="id_attendance" value="<?= $data['id_attendance'] ?>"> <!-- e-->
                                                         <label class="btn btn-outline-success">
-                                                            <input type="radio" name="attendance" id="attendance-yes" autocomplete="off">Attend
+                                                            <input type="radio" name="attendance" id="attendance-yes" autocomplete="off" value="1">Attend
+															
                                                         </label>
                                                         <br>
                                                         <label class="btn btn-outline-danger">
-                                                            <input type="radio" name="attendance" id="attendance-no" autocomplete="off">Absent
+                                                            <input type="radio" name="attendance" id="attendance-no" autocomplete="off" value="0">Absent
                                                         </label>
                                                         <br>
                                                     </div>
@@ -161,5 +167,5 @@
             <!-- footer modal -->
         </div>
     </div>
-    </div> 
+    </div>
     </div>
