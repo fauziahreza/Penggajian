@@ -63,7 +63,7 @@
 										$id_attendance = $_POST['id_attendance'];
                                         echo $attendance;
 										echo $id_attendance;
-                                        mysqli_query($connection,"UPDATE attendance SET attendance_status = $attendance WHERE id_attendance = $id_attendance AND attendance_date = '$cur_date'");
+                                        mysqli_query($connection,"UPDATE attendance SET attendance_status = $attendance WHERE id_attendance = $id_attendance ");
                                         echo "<script> document.location = 'index.php?page=AbsentEmployee'; </script>";
                                     }
                                    while ($data = mysqli_fetch_array($select)) {
