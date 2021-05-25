@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2021 at 01:07 PM
+-- Generation Time: May 25, 2021 at 03:19 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -54,7 +54,8 @@ INSERT INTO `attendance` (`id_attendance`, `id_user`, `attendance_date`, `attend
 (1, 1, '2021-05-24', 1),
 (2, 2, '2021-05-24', 0),
 (3, 1, '2021-05-23', 0),
-(4, 1, '2021-05-21', 0);
+(4, 1, '2021-05-21', 0),
+(5, 2, '2021-05-25', 1);
 
 -- --------------------------------------------------------
 
@@ -77,14 +78,37 @@ CREATE TABLE `payroll` (
 --
 
 INSERT INTO `payroll` (`id_payroll`, `id_user`, `year_filter`, `month_filter`, `salary`, `payment_method`, `status_paid`) VALUES
-(20, 1, '2021', 'May', NULL, NULL, 1),
-(21, 2, '2021', 'May', NULL, NULL, 1),
-(22, 3, '2021', 'May', 5000, NULL, 0),
-(23, 4, '2021', 'May', NULL, NULL, 0),
-(24, 5, '2021', 'May', NULL, NULL, 0),
-(25, 6, '2021', 'May', NULL, NULL, 0),
-(26, 7, '2021', 'May', NULL, NULL, 0),
-(27, 8, '2021', 'May', NULL, NULL, 0);
+(245, 1, '2021', 'May', NULL, NULL, 1),
+(246, 2, '2021', 'May', NULL, NULL, 1),
+(247, 3, '2021', 'May', 5000, NULL, 0),
+(248, 4, '2021', 'May', 2000, NULL, 1),
+(249, 5, '2021', 'May', 2000000, NULL, 1),
+(250, 6, '2021', 'May', 1000000, NULL, 0),
+(251, 7, '2021', 'May', NULL, NULL, 0),
+(252, 8, '2021', 'May', NULL, NULL, 0),
+(253, 1, '2021', 'February', NULL, NULL, 0),
+(254, 2, '2021', 'February', NULL, NULL, 0),
+(255, 3, '2021', 'February', NULL, NULL, 1),
+(256, 4, '2021', 'February', NULL, NULL, 1),
+(257, 5, '2021', 'February', NULL, NULL, 1),
+(258, 6, '2021', 'February', NULL, NULL, 0),
+(259, 7, '2021', 'February', NULL, NULL, 0),
+(260, 8, '2021', 'February', NULL, NULL, 0),
+(261, 1, '2021', 'April', NULL, NULL, 0),
+(262, 2, '2021', 'April', NULL, NULL, 0),
+(263, 3, '2021', 'April', NULL, NULL, 0),
+(264, 4, '2021', 'April', NULL, NULL, 0),
+(265, 5, '2021', 'April', NULL, NULL, 0),
+(266, 6, '2021', 'April', NULL, NULL, 0),
+(267, 7, '2021', 'April', NULL, NULL, 0),
+(268, 8, '2021', 'April', NULL, NULL, 0),
+(269, 1, '2021', 'June', NULL, NULL, 0),
+(270, 2, '2021', 'June', NULL, NULL, 0),
+(271, 3, '2021', 'June', NULL, NULL, 0),
+(272, 4, '2021', 'June', NULL, NULL, 0),
+(273, 6, '2021', 'June', NULL, NULL, 0),
+(274, 7, '2021', 'June', NULL, NULL, 0),
+(275, 8, '2021', 'June', NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -97,24 +121,25 @@ CREATE TABLE `user` (
   `nama_user` varchar(64) NOT NULL,
   `email_user` varchar(64) NOT NULL,
   `password_user` varchar(64) NOT NULL,
-  `level_user` enum('karyawan','admin_financial','admin_personalia','super_admin') NOT NULL,
+  `level_user` enum('karyawan','admin','super_admin') NOT NULL,
   `jabatan` varchar(32) DEFAULT NULL,
-  `join_date` date NOT NULL
+  `join_date` date NOT NULL,
+  `alamat_user` varchar(64) DEFAULT NULL,
+  `nohp` varchar(16) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`, `level_user`, `jabatan`, `join_date`) VALUES
-(1, 'Muhammad Karyawan', 'user1@gmail.com', 'user1', 'karyawan', 'Senior Mobile Developer', '2021-05-21'),
-(2, 'Muhammad Karyawan Teladan', 'user2@gmail.com', 'user2', 'karyawan', 'Junior Mobile Developer', '2021-05-21'),
-(3, 'Muhammad Super Admin', 'superadmin@kelompok2.com', 'admin', 'super_admin', NULL, '2021-05-21'),
-(4, 'Muhammad Karyawan 66', 'user6@email.com', '1', 'karyawan', NULL, '2021-05-21'),
-(5, 'Muhammad Karyawan 66', 'user6@email.com', '3', 'karyawan', NULL, '2021-05-21'),
-(6, 'Ahmad Admin', 'user7@email.com', 'user7', 'karyawan', NULL, '2021-05-22'),
-(7, 'Ahmad Admin Mustofa', 'user8@email.com', 'user8', 'karyawan', NULL, '2021-05-22'),
-(8, 'Winarto', 'user9@email.com', 'user9', 'karyawan', NULL, '2021-05-22');
+INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`, `level_user`, `jabatan`, `join_date`, `alamat_user`, `nohp`) VALUES
+(1, 'Muhammad Admin Teladan', 'user1@gmail.com', 'user1', 'admin', 'Senior Mobile Developer', '2021-05-21', NULL, NULL),
+(2, 'Muhammad Karyawan Teladan', 'user2@gmail.com', 'user2', 'karyawan', 'Junior Mobile Developer', '2021-05-21', NULL, NULL),
+(3, 'Muhammad Admin Waluyo', 'superadmin@kelompok2.com', 'admin', 'super_admin', '', '2021-05-21', 'Jalan Surabaya no 16', '081111111111'),
+(4, 'Muhammad Karyawan 66', 'user6@email.com', '1', 'karyawan', NULL, '2021-05-21', NULL, NULL),
+(6, 'Ahmad Admin', 'user7@email.com', 'user7', 'karyawan', NULL, '2021-05-22', NULL, NULL),
+(7, 'Ahmad Admin Mustofa', 'user8@email.com', 'user8', 'karyawan', NULL, '2021-05-22', NULL, NULL),
+(8, 'Winarto', 'user9@email.com', 'user9', 'karyawan', NULL, '2021-05-22', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -147,13 +172,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `id_attendance` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_attendance` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `payroll`
 --
 ALTER TABLE `payroll`
-  MODIFY `id_payroll` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_payroll` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=276;
 
 --
 -- AUTO_INCREMENT for table `user`
