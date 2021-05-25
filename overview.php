@@ -63,7 +63,7 @@
                           <h3 class="mb-0">Employee</h3>
                         </div>
                         <div class="col text-right">
-                          <a href="employee.html" class="btn btn-sm btn-primary">See all</a>
+                          <a href="index.php?page=employee" class="btn btn-sm btn-primary">See all</a>
                         </div>
                       </div>
                     </div>

@@ -90,7 +90,7 @@
                                     edit
                                     </button>
                                     <button type="button" id="deleteButton" class="btn btn-danger" data-toggle="modal" data-target="#deleteEmployee<?= $data['id_user'] ?>">
-                                    hapus
+                                    delete
                                     </button>
                                 </td>
                             </tr>
@@ -111,7 +111,10 @@
                                             <input type="text" class="form-control" name="editnama" value="<?= $data['nama_user'] ?>">
                                             <label for="editjabatan">Jabatan : </label>
                                             <input type="text" class="form-control" name="editjabatan" value="<?= $data['jabatan'] ?>">
-                                            
+                                            <?php if ($_SESSION['level_user'] == 'super_admin'){ ?>
+                                                <label for="editleveluser">Level User : </label>
+                                                <input type="text" class="form-control" name="editjabatan" value="<?= $data['level_user'] ?>">
+                                            <?php } ?>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

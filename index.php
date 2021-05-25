@@ -44,7 +44,7 @@ include("system/connection.php");
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->
           <ul class="navbar-nav">
-            <?php if ($_SESSION['level_user'] == 'super_admin'){ ?>
+            <?php if ($_SESSION['level_user'] == 'super_admin' || $_SESSION['level_user'] == 'admin'){ ?>
             <li class="nav-item">
               <a class="nav-link" href="index.php?page=overview">
                 <i class="ni ni-tv-2 text-primary"></i>
@@ -135,7 +135,7 @@ include("system/connection.php");
     <!-- Page content -->
     <?php
     if (!isset($_GET["page"])) {
-        if ($_SESSION['level_user'] == 'super_admin'){ 
+        if ($_SESSION['level_user'] == 'super_admin' || $_SESSION['level_user'] == 'admin'){ 
             include("overview.php");
         }elseif($_SESSION['level_user'] == 'karyawan'){
             include("attendance.php");

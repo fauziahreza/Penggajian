@@ -20,8 +20,21 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Period : 01/01/2021 - 31/01/2021</h5>
-                                        <span class="h2 font-weight-bold mb-0"><label id="periodBalance"><center>Rp 200.000.000</center></label></span>
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Period <?= date('M Y'); ?></h5>
+                                        <span class="h2 font-weight-bold mb-0"><label id="periodBalance">
+                                        <?php 
+                                            function rupiah($angka){
+                                                $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+                                                return $hasil_rupiah;
+                                            }
+                                            $totalsalary = 0;
+                                            $cur_year = date('Y');
+                                            $cur_month = date('M');
+                                            $counttotalsalary = mysqli_query($connection, "SELECT * FROM payroll INNER JOIN user ON payroll.id_user = user.id_user WHERE year_filter = '$cur_year' AND month_filter = '$cur_month'"); 
+                                            foreach($counttotalsalary as $rowdata){$totalsalary+=$rowdata['salary'];} 
+                                            echo rupiah($totalsalary); 
+                                        ?>
+                                        </label></span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -192,7 +205,7 @@
                                 <tr>
                                     <th scope="row"><?= $data['nama_user'] ?></th>
                                     <td><?= $data['jabatan'] ?></td>
-                                    <td><?= $data['salary'] ?></td>
+                                    <td><?= rupiah($data['salary']) ?></td>
                                     <td><?= $data['payment_method'] ?></td>
                                     <td>
                                         <?php if($data['status_paid']){echo "Paid";}else{echo "Not paid yet ";} ?>
@@ -218,7 +231,7 @@
                                         </div>
                                         <form action="" method="POST">
                                             <div class="modal-body">
-                                                <input type="number" name="idpayroll" value="<?= $data['id_payroll'] ?>">
+                                                <input type="number" hidden name="idpayroll" value="<?= $data['id_payroll'] ?>">
                                                 <input type="number" name="iduser" value="<?= $data['id_user'] ?>" hidden>
                                                 <label for="editnama">Nama : </label>
                                                 <input type="text" class="form-control" name="editnama" value="<?= $data['nama_user'] ?>" disabled>
