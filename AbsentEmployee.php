@@ -113,7 +113,7 @@
                                                 <div class="modal-body">
                                                     <p>Select Conditions :</p>
                                                     <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
-													<input type="number" name="id_attendance" value="<?= $data['id_attendance'] ?>"> <!-- e-->
+													<input type="number" hidden="true" name="id_attendance" value="<?= $data['id_attendance'] ?>"> <!-- e-->
                                                         <label class="btn btn-outline-success">
                                                             <input type="radio" name="attendance" id="attendance-yes" autocomplete="off" value="1">Attend
 															
