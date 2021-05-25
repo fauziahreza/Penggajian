@@ -52,7 +52,7 @@
                                     </tr>
                                 </thead>
                                 <?php 
-                                    $select = mysqli_query($connection,"SELECT * FROM attendance INNER JOIN user ON attendance.id_user = user.id_user");
+                                    $select = mysqli_query($connection,"SELECT * FROM attendance INNER JOIN user ON attendance.id_user = user.id_user ORDER BY attendance_date DESC");
                                     if (isset($_POST["search"])) {
                                         $search = $_POST["search"];
                                         $select = mysqli_query($connection, "SELECT * FROM attendance INNER JOIN user ON attendance.id_user = user.id_user WHERE nama_user LIKE '%$search%'");

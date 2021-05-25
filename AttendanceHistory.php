@@ -36,7 +36,7 @@
                   <tbody>
                     <?php
                       $iduser = $_SESSION["id_user"];
-                      $select = mysqli_query($connection,"SELECT * FROM attendance WHERE id_user = $iduser");
+                      $select = mysqli_query($connection,"SELECT * FROM attendance WHERE id_user = $iduser ORDER BY attendance_date DESC");
                       $tempnumber = 1;
                       foreach($select as $data){
                     ?>
