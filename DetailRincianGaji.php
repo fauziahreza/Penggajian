@@ -35,7 +35,7 @@
                 <tbody>
                     <tr>
                         <th scope="row">
-                            Compny Name
+                            Company Name
                         </th>
                         <td>
                             Perusahaan X
@@ -131,7 +131,9 @@
               </table>
             </div>
             <div class="card-footer">
-              <button type="button" class="btn btn-info float-right">Print</button>
+              <button type="button" class="btn btn-info float-right">
+              <a href="cetakslip.php" target="_BLANK">PRINT</a>
+              </button>
               <button type="button" onclick="previousPage()" class="btn btn-secondary float-right mr-4">Back</button>
             </div>
           </div>
