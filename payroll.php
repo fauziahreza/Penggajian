@@ -20,7 +20,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Period <?= date('M Y'); ?></h5>
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Period <?= date('F Y'); ?></h5>
                                         <span class="h2 font-weight-bold mb-0"><label id="periodBalance">
                                         <?php 
                                             function rupiah($angka){
@@ -29,7 +29,7 @@
                                             }
                                             $totalsalary = 0;
                                             $cur_year = date('Y');
-                                            $cur_month = date('M');
+                                            $cur_month = date('F');
                                             $counttotalsalary = mysqli_query($connection, "SELECT * FROM payroll INNER JOIN user ON payroll.id_user = user.id_user WHERE year_filter = '$cur_year' AND month_filter = '$cur_month'"); 
                                             foreach($counttotalsalary as $rowdata){$totalsalary+=$rowdata['salary'];} 
                                             echo rupiah($totalsalary); 
@@ -83,7 +83,7 @@
                             <div class='col-xl-4'>
                             <form action="" method="POST">
                                 <label for="yearpicker">Year:</label>
-                                <select name="yearpicker" id="yearpicker">
+                                <select name="yearpicker" id="yearpicker" onchange="submit()">
                                     <?php 
                                         $year_list = array('2020','2021');
                                         $cur_year = date("Y");
@@ -98,7 +98,7 @@
                                     ?>
                                 </select>
                                 <label for="monthpicker">Month:</label>
-                                <select name="monthpicker" id="monthpicker">
+                                <select name="monthpicker" id="monthpicker" onchange="submit()">
                                     <?php 
                                         $month_list = array('January','February','March','April','May','June','July','August','September','October','November','December');
                                         $cur_month = $selected_month??date("M"); // akan menerapkan ngambil dari database untuk selected month
@@ -113,7 +113,7 @@
                                     ?>
                                 </select>
                             </div>
-                                <button type="submit" name="updatedata" class="btn btn-danger">Refresh Data</button>
+                                <!-- <button type="submit" name="updatedata" class="btn btn-danger">Refresh Data</button> -->
                             </form>
                             <div class="col text-right">
                                 
@@ -162,7 +162,7 @@
                                         mysqli_query($connection, "UPDATE PAYROLL SET status_paid = '1' WHERE id_payroll = $varID");
                                         echo "<script> document.location = 'index.php?page=payroll'; </script>";
                                     };
-                                    if (isset($_POST["updatedata"])){
+                                    if (isset($_POST["monthpicker"])){
                                         $_SESSION['yearpicker'] = $_POST['yearpicker'];
                                         $_SESSION['monthpicker'] = $_POST['monthpicker'];
                                         $yearSESSION = $_SESSION['yearpicker'];
@@ -172,10 +172,17 @@
                                             $namauser = $datas['nama_user'];
                                             $posisi = $datas['jabatan'];
                                             // query buat insert data & refresh halaman
-                                            mysqli_query($connection,"INSERT INTO payroll (id_user, year_filter, month_filter) 
-                                            SELECT * FROM (SELECT $iduser, '$yearSESSION', '$monthSESSION') AS tmp 
+                                            mysqli_query($connection,"INSERT INTO payroll (id_user, year_filter, month_filter, salary) 
+                                            SELECT * FROM (SELECT $iduser, '$yearSESSION', '$monthSESSION', 4000000) AS tmp 
                                             WHERE NOT EXISTS (SELECT id_user, year_filter, month_filter FROM payroll 
                                             WHERE id_user = $iduser AND year_filter = '$yearSESSION' AND month_filter = '$monthSESSION');");
+                                        }
+                                        foreach (mysqli_query($connection, "SELECT * FROM payroll INNER JOIN user ON payroll.id_user = user.id_user WHERE year_filter = '$selected_year' AND month_filter = '$selected_month'") as $row){ // untuk mengubah gaji Senior Mobile Developer menjadi 10juta karena defaultnya 4juta semua
+                                            if ($row['jabatan'] == 'Senior Mobile Developer' && $row['salary'] == 4000000){
+                                                mysqli_query($connection, "UPDATE payroll SET salary = 10000000 WHERE id_user = $row[id_user]");
+                                            }elseif($row['salary'] == null){
+                                                mysqli_query($connection, "UPDATE payroll SET salary = 4000000 WHERE id_user = $row[id_user]");
+                                            }
                                         }
                                         echo "<script> document.location = 'index.php?page=payroll'; </script>";
                                     }else{
@@ -184,8 +191,8 @@
                                             $namauser = $datas['nama_user'];
                                             $posisi = $datas['jabatan'];
                                             // query buat insert data & refresh halaman
-                                            mysqli_query($connection,"INSERT INTO payroll (id_user, year_filter, month_filter) 
-                                            SELECT * FROM (SELECT $iduser, '$selected_year', '$selected_month') AS tmp 
+                                            mysqli_query($connection,"INSERT INTO payroll (id_user, year_filter, month_filter, salary) 
+                                            SELECT * FROM (SELECT $iduser, '$selected_year', '$selected_month', 4000000) AS tmp 
                                             WHERE NOT EXISTS (SELECT id_user, year_filter, month_filter FROM payroll 
                                             WHERE id_user = $iduser AND year_filter = '$selected_year' AND month_filter = '$selected_month');");
                                         }
