@@ -113,7 +113,7 @@
                                     ?>
                                 </select>
                             </div>
-                                <!-- <button type="submit" name="updatedata" class="btn btn-danger">Refresh Data</button> -->
+                                <button type="submit" name="updatedata" class="btn btn-danger">Refresh Data</button>
                             </form>
                             <div class="col text-right">
                                 
