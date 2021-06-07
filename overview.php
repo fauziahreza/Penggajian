@@ -3,7 +3,7 @@
   $selectattendance = mysqli_query($connection,"SELECT * FROM attendance INNER JOIN user ON attendance.id_user = user.id_user WHERE attendance_status = 1 LIMIT 3");
   $selectuser = mysqli_query($connection, "SELECT * FROM user ORDER BY join_date DESC LIMIT 6");
   $cur_year = date('Y');
-  $cur_month = date('M');
+  $cur_month = date('F');
   $selectpayroll = mysqli_query($connection, "SELECT * FROM payroll INNER JOIN user ON payroll.id_user = user.id_user WHERE status_paid = 1 AND year_filter = '$cur_year' AND month_filter = '$cur_month' LIMIT 3");
 
 ?>
