@@ -23,13 +23,15 @@ include("system/connection.php");
     <link rel="stylesheet" href="asset/library/vendor/nucleo/css/nucleo.css" type="text/css">
     <link rel="stylesheet" href="asset/library/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
     <!-- Page plugins -->
+    <!-- Sweetalert -->
+    <link rel="stylesheet" href="asset/library/sweetalert/dist/sweetalert2.min.css">
     <!-- Argon CSS -->
     <link rel="stylesheet" href="asset/library/css/argon.css" type="text/css">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="asset/styles.css">
 </head>
 
-<body>
+<body onload="getData(<?= $_SESSION['id_user'] ?>)">
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
     <div class="scrollbar-inner">
@@ -215,11 +217,46 @@ include("system/connection.php");
   <!-- Optional JS -->
   <script src="asset/library/vendor/chart.js/dist/Chart.min.js"></script>
   <script src="asset/library/vendor/chart.js/dist/Chart.extension.js"></script>
+  <!-- Sweetalert -->
+  <script src="asset/library/sweetalert/dist/sweetalert2.min.js"></script>
   <!-- Argon JS -->
   <script src="asset/library/js/argon.js?v=1.2.0"></script>
   <!-- Calendar JS -->
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="asset/index.js"></script>
+  <script>
+    function getData($id_user) {
+      $.ajax({
+        method: "GET",
+        url: "data.php?data=attendance",
+        data: {
+          id_user: $id_user
+        },
+        success: function(res) {
+          console.log(res);
+          var obj = JSON.parse(res);
+          var lastdate = new Date(obj.attendance_date);
+          var nowdate = new Date();
+          var Difference_In_Time = nowdate.getTime() - lastdate.getTime();
+          var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+          console.log(lastdate);
+          console.log(nowdate);
+          console.log(Math.round(Difference_In_Days));
+          var lala = new Date(obj.attendance_date);
+          var bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+          if(Math.round(Difference_In_Days) > 3){
+            Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Anda belum melakukan check in sebanyak ' + (Math.round(Difference_In_Days) - 3) + " hari terhitung setelah tanggal " + lastdate.getDate() + " " + bulan[lastdate.getMonth()] + " " + lastdate.getFullYear(),
+              showConfirmButton: true
+            })
+          }
+          $("#aset_id_edit").val(obj.aset_id);
+        }
+      })
+    }
+  </script>
 </body>
 
 </html>
