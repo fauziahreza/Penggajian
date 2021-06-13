@@ -1,3 +1,11 @@
+<?php
+$id = $_SESSION['id_user'];
+if (!isset($_SESSION["email_user"])) {
+    header("location: intro.php");
+}
+include("system/connection.php");
+?>
+
 <!-- Header -->
 <div class="header gradient-bg pb-6">
   <div class="container-fluid">
@@ -26,10 +34,21 @@
             </div>
           </div>
         </div>
+        <?php
+        if((isset($_GET['inputMonthRincianGaji']) && $_GET['inputMonthRincianGaji']!='') && (isset($_GET['inputYearRincianGaji']) && $_GET['inputYearRincianGaji']!='')){
+          $bulan = $_GET['inputMonthRincianGaji'];
+          $tahun = $_GET['inputYearRincianGaji'];
+          $bulan.$tahun = $bulan.$tahun;
+        }
+        ?>
         <div class="table-responsive">
           <!-- Projects table -->
+          <?php
+          $query_data_user = "SELECT * FROM payroll NATURAL JOIN user WHERE id_user = $id";
+          $sql_data_user = mysqli_query($connection, $query_data_user);
+          ?>
           <table class="table align-items-center table-flush">
-    <thead class="thead-light">
+            <thead class="thead-light">
               <tr>
                 <th scope="col">Month</th>
                 <th scope="col">Position</th>
@@ -38,20 +57,21 @@
               </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        May
-                    </td>
-                    <td>
-                        Mobile Developer
-                    </td>
-                    <td>
-                        Rp 5.000.000
-                    </td>
-                    <td>
-                        <a href="index.php?page=DetailRincianGaji" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Detail</a>
-                    </td>
+            <?php
+                while($r_dt_user = mysqli_fetch_array($sql_data_user)){
+            ?>
+                <tr class="odd gradeX">
+                <td><?php echo $r_dt_user['month_filter']; ?></td>
+                <td><?php echo $r_dt_user['jabatan']; ?></td>
+                <td><?php echo $r_dt_user['salary']; ?></td>
+                <td>
+                    <a name="update" href="index.php?page=DetailRincianGaji&id=<?php echo $r_dt_user['id_payroll'];?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" value="<?php echo $r_dt_user['id_payroll'];?>">Detail</a>
+                   
+                </td>
                 </tr>
+            <?php
+              }
+            ?>
             </tbody>
           </table>
         </div>

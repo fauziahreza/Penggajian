@@ -1,3 +1,10 @@
+<?php
+$id = $_SESSION['id_user'];
+if (!isset($_SESSION["email_user"])) {
+    header("location: intro.php");
+}
+    include("system/connection.php");
+?>
 
 
   <!-- Main content -->
@@ -30,29 +37,51 @@
             </div>
             <div class="table-responsive">
               <!-- Projects table -->
-              <table class="table align-items-center table-flush">
+              <?php
+              $query = "select * from user where id_user = $id";
+              mysqli_query($connection, $query);
+              $sql = mysqli_query($connection, $query);
+    
+              while($r = mysqli_fetch_array($sql)){
+                  $nama_user = $r['nama_user'];
+                  $jabatan = $r['jabatan'];
+              
+              ?>
 
+              <?php
+              $detail = $_GET['id'];
+              $query2 = "select * from payroll where id_payroll = $detail";
+              mysqli_query($connection, $query2);
+              $sql2 = mysqli_query($connection, $query2);  
+
+              while($r2 = mysqli_fetch_array($sql2)){
+                $bulan= $r2['month_filter'];
+                $tahun = $r2['year_filter'];
+                $gaji = $r2['salary'];
+            
+              ?>
+              <table class="table align-items-center table-flush">
                 <tbody>
                     <tr>
                         <th scope="row">
                             Company Name
                         </th>
                         <td>
-                            Perusahaan X
+                            PT. KETWOOO
                         </td>
                         <td>
                             
                         </td>
                         <th scope="row">
-                            ID Employe
+                            ID Employee
                         </th>
                         <td>
-                            1
+                          <?php echo $r['id_user'];?>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">
-                            Created
+                            Created by
                         </th>
                         <td>
                             Admin
@@ -64,15 +93,15 @@
                             Staff Name
                         </th>
                         <td>
-                            Fauzia Reza
+                          <?php echo $r['nama_user'];?>
                         </td>
                     </tr>
-					<tr>
+					          <tr>
                         <th scope="row">
                             Period
                         </th>
                         <td>
-                            04-2021
+                          <?php echo $r2['month_filter'];?> &nbsp; <?php echo $r2['year_filter'];?>
                         </td>
                         <td>
                             
@@ -81,10 +110,10 @@
                             Position
                         </th>
                         <td>
-                            Mobile Developer
+                          <?php echo $r['jabatan'];?>
                         </td>
                     </tr>
-					<tr>
+					          <tr>
                         <th scope="row">
                             
                         </th>
@@ -101,34 +130,24 @@
                             
                         </td>
                     </tr>
-					<tr>
+					          <tr>
                         <th scope="row">
-                            Basic Salary
+                            Salary
                         </th>
                         <td>
-                            Rp 5.000.000
+                            Rp <?php echo $r2['salary'];?>
                         </td>
                         
                     </tr>
-					<tr>
-                        <th scope="row">
-                            Overtime Pay
-                        </th>
-                        <td>
-                            Rp 0
-                        </td>
-                        
-                    </tr>
-					<tr>
-                        <th scope="row">
-                            Total Received
-                        </th>
-                        <td>
-                            <strong> Rp 5.000.000</strong>
-                        </td>
-                    </tr>
+					         
                 </tbody>
               </table>
+              <?php
+                }
+              ?>
+              <?php
+                }
+              ?>
             </div>
             <div class="card-footer">
               <button type="button" class="btn btn-info float-right">
