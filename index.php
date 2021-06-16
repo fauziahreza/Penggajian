@@ -23,6 +23,7 @@ include("system/connection.php");
   <link rel="stylesheet" href="asset/library/vendor/nucleo/css/nucleo.css" type="text/css">
   <link rel="stylesheet" href="asset/library/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
   <!-- Page plugins -->
+  <link rel="stylesheet" href="asset/cetak.css">
   <!-- Sweetalert -->
   <link rel="stylesheet" href="asset/library/sweetalert/dist/sweetalert2.min.css">
   <!-- Argon CSS -->
