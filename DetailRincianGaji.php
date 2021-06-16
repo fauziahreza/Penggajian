@@ -22,7 +22,7 @@ if (!isset($_SESSION["email_user"])) {
       </div>
     </div>
           <!-- Card stats -->
-		  <div class="container-fluid mt--6">
+		  <div class="container-fluid mt--6" id="section-to-print">
       <div class="row">
         <div class="col">
           <div class="card">
@@ -62,6 +62,12 @@ if (!isset($_SESSION["email_user"])) {
               ?>
               <table class="table align-items-center table-flush">
                 <tbody>
+                  <tr>
+                  <center>
+                    <br>
+                    <h2>SLIP GAJI KARYAWAN <br> COMPANY X <br><br></h2>
+                  </center>
+                  </tr>
                     <tr>
                         <th scope="row">
                             Company Name
@@ -149,9 +155,9 @@ if (!isset($_SESSION["email_user"])) {
                 }
               ?>
             </div>
-            <div class="card-footer">
-              <button type="button" class="btn btn-info float-right">
-              <a href="cetakslip.php" target="_BLANK">Print</a>
+            <div class="card-footer " id="noprint">
+              <button type="button" class="btn btn-info float-right" onclick="window.print();">
+                Print
               </button>
               <button type="button" onclick="previousPage()" class="btn btn-secondary float-right mr-4">Back</button>
             </div>
