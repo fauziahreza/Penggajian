@@ -44,7 +44,7 @@ include("system/connection.php");
         <div class="table-responsive">
           <!-- Projects table -->
           <?php
-          $query_data_user = "SELECT * FROM payroll NATURAL JOIN user WHERE id_user = $id";
+          $query_data_user = "SELECT * FROM payroll NATURAL JOIN user WHERE id_user = $id AND status_paid = 1 ORDER BY month_filter ASC";
           $sql_data_user = mysqli_query($connection, $query_data_user);
           ?>
           <table class="table align-items-center table-flush">
